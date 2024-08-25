@@ -1,0 +1,43 @@
+{
+  "eigenschaften": {
+    "eigenschaft1": "Since",
+    "eigenschaft2": "Scarcity",
+    "eigenschaft3": "Durability",
+    "eigenschaft4": "Divisibility",
+    "eigenschaft5": "Transportability"
+  },
+  "cards": {
+    "bitcoin": {
+      "name": "Bitcoin",
+      "textinfo": "Bitcoin has been a revolutionary currency since 2009..."
+    },
+    "ethereum": {
+      "name": "Ethereum",
+      "textinfo": "Ethereum, introduced in 2015, is known for Smart Contracts..."
+    },
+    "euro": {
+      "name": "Euro",
+      "textinfo": "The Euro was introduced in 1999 as the currency of Europe..."
+    },
+    "monero": {
+      "name": "Monero",
+      "textinfo": "Monero has been a popular privacy-focused cryptocurrency since 2014..."
+    },
+    "gold": {
+      "name": "Gold",
+      "textinfo": "Gold has been valued as a precious metal for centuries..."
+    },
+    "silver": {
+      "name": "Silver",
+      "textinfo": "Silver has been used long before modern currencies..."
+    },
+    "copper": {
+      "name": "Copper",
+      "textinfo": "Copper is often valued as an industrial metal..."
+    },
+    "dollar": {
+      "name": "Dollar",
+      "textinfo": "The Dollar is one of the most widely used currencies worldwide..."
+    }
+  }
+}
