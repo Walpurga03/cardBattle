@@ -18,7 +18,10 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    /* Module Interoperability */
+    "esModuleInterop": true  // Diese Zeile hinzufügen
   },
   "include": ["src"]
 }
