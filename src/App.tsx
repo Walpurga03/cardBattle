@@ -4,6 +4,7 @@ import CardComponent from './components/CardComponent';
 import LanguageSwitcher from './components/LanguageSwitcher';
 import cardsData from './assets/cards.json';
 import { selectHighestPropertyForComputer } from './utils/selectHighestPropertyForComputer';
+import './App.css';
 
 interface Card {
   id: string;
@@ -19,7 +20,6 @@ interface Card {
 
 type PropertyKey = 'eigenschaft1' | 'eigenschaft2' | 'eigenschaft3' | 'eigenschaft4' | 'eigenschaft5';
 
-// Eigenschaften, bei denen niedrigere Werte besser sind (z.B. "Seit")
 const propertiesWhereLowerIsBetter: PropertyKey[] = ['eigenschaft1'];
 
 function shuffleArray(array: Card[]): Card[] {
@@ -31,7 +31,7 @@ function shuffleArray(array: Card[]): Card[] {
 }
 
 function App() {
-  const { t } = useTranslation(); // i18n-Hook zum Übersetzen
+  const { t } = useTranslation();
   const [playerCards, setPlayerCards] = useState<Card[]>([]);
   const [computerCards, setComputerCards] = useState<Card[]>([]);
   const [drawPile, setDrawPile] = useState<Card[]>([]);
@@ -44,7 +44,6 @@ function App() {
   const [gameOver, setGameOver] = useState(false);
   const [gameInitialized, setGameInitialized] = useState(false);
 
-  // Zustand für die Details der letzten Runde
   const [lastRoundDetails, setLastRoundDetails] = useState<{
     selectedProperty: PropertyKey | null;
     playerValue: number | null;
@@ -55,7 +54,6 @@ function App() {
     computerValue: null,
   });
 
-  // Initialisiere das Spiel und verteile die Karten
   useEffect(() => {
     const shuffledCards = shuffleArray([...cardsData]);
     const middleIndex = Math.floor(shuffledCards.length / 2);
@@ -65,7 +63,6 @@ function App() {
     setGameInitialized(true);
   }, []);
 
-  // Setze die aktuellen Karten für Spieler und Computer, nachdem die Karten aufgeteilt wurden
   useEffect(() => {
     if (gameInitialized && playerCards.length > 0 && computerCards.length > 0) {
       setCurrentPlayerCard(playerCards[0]);
@@ -73,7 +70,6 @@ function App() {
     }
   }, [playerCards, computerCards, gameInitialized]);
 
-  // Überprüfe, ob das Spiel vorbei ist
   useEffect(() => {
     if (gameInitialized) {
       if (playerCards.length === 0) {
@@ -92,19 +88,17 @@ function App() {
     const playerValue = currentPlayerCard.eigenschaften[property];
     const computerValue = currentComputerCard.eigenschaften[property];
 
-    // Speichere die Details der letzten Runde
     setLastRoundDetails({
       selectedProperty: property,
       playerValue,
       computerValue,
     });
 
-    // Vergleichslogik: Höherer Wert oder niedrigerer Wert gewinnt, je nach Eigenschaft
     let playerWins: boolean;
     if (propertiesWhereLowerIsBetter.includes(property)) {
-      playerWins = playerValue < computerValue; // Niedrigerer Wert gewinnt
+      playerWins = playerValue < computerValue;
     } else {
-      playerWins = playerValue > computerValue; // Höherer Wert gewinnt
+      playerWins = playerValue > computerValue;
     }
 
     if (playerWins) {
@@ -124,7 +118,11 @@ function App() {
       setDrawPile([...drawPile, currentPlayerCard, currentComputerCard]);
       setPlayerCards(playerCards.slice(1));
       setComputerCards(computerCards.slice(1));
-      setIsComputerTurn(false);
+      if (isComputerTurn) {
+        setIsComputerTurn(true);
+      } else {
+        setIsComputerTurn(false);
+      }
     }
   };
 
@@ -147,25 +145,30 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Card Battle</h1>
-      <LanguageSwitcher />
+      <nav className="navbar">
+        <LanguageSwitcher /> {/* Sprachumschalter in die Navigation verschieben */}
+      </nav>
 
       <div className="battlefield">
-        <div>
-          <h2>Player's Card (Karten: {playerCards.length})</h2>
+        <div className="card-container">
+          <h2>Player ({playerCards.length})</h2>
           {currentPlayerCard ? (
-            <CardComponent
-              cardId={currentPlayerCard.id}
-              onSelectProperty={!isComputerTurn ? compareSelectedProperty : undefined}
-            />
+            <div className="card">
+              <CardComponent
+                cardId={currentPlayerCard.id}
+                onSelectProperty={!isComputerTurn ? compareSelectedProperty : undefined}
+              />
+            </div>
           ) : (
             <p>Keine Karten mehr</p>
           )}
         </div>
-        <div>
-          <h2>Computer's Card (Karten: {computerCards.length})</h2>
+        <div className="card-container">
+          <h2>Computer ({computerCards.length})</h2>
           {currentComputerCard ? (
-            <CardComponent cardId={currentComputerCard.id} isComputer />
+            <div className="card">
+              <CardComponent cardId={currentComputerCard.id} isComputer />
+            </div>
           ) : (
             <p>Keine Karten mehr</p>
           )}
@@ -202,6 +205,7 @@ function App() {
         </div>
       )}
     </div>
+
   );
 }
 

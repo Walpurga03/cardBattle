@@ -19,32 +19,49 @@ const CardComponent: React.FC<CardComponentProps> = ({ cardId, onSelectProperty,
 
   // Eigenschaftsnamen aus den Übersetzungsdateien laden
   const renderProperty = (propertyKey: 'eigenschaft1' | 'eigenschaft2' | 'eigenschaft3' | 'eigenschaft4' | 'eigenschaft5') => {
-    const propertyLabel = t(`eigenschaften.${propertyKey}`); // Zentraler Zugriff auf die Eigenschaftsnamen
+    const propertyLabel = t(`eigenschaften.${propertyKey}`);
     const propertyValue = card.eigenschaften[propertyKey];
 
     return (
       <li
         key={propertyKey}
-        onClick={() => !isComputer && onSelectProperty && onSelectProperty(propertyKey)} // Nur klickbar, wenn es keine Computerkarte ist
-        style={{ cursor: isComputer ? 'default' : 'pointer', color: isComputer ? 'grey' : 'black' }}
+        onClick={() => !isComputer && onSelectProperty && onSelectProperty(propertyKey)}
+        style={{ cursor: isComputer ? 'default' : 'pointer', color: isComputer ? 'grey' : 'black', margin: '10px 0' }}
       >
-        {propertyLabel}: {propertyValue}
+        <span className="property-label">{propertyLabel}</span>
+        <span className="property-value">{propertyValue}</span>
+        {/* Nur Skala für andere Eigenschaften anzeigen */}
+        {propertyKey !== 'eigenschaft1' && (
+          <div className="rating-scale">
+            <div
+              className="rating-bar"
+              style={{
+                width: `${(propertyValue / 5) * 100}%`,
+                backgroundColor: propertyKey === 'eigenschaft2' ? '#E09594' :
+                  propertyKey === 'eigenschaft3' ? '#92B4DE' :
+                    propertyKey === 'eigenschaft4' ? '#76C9B4' : '#E0C3B0',
+              }}
+            />
+          </div>
+        )}
       </li>
     );
   };
 
   return (
-    <div>
-      <h2>{t(`cards.${cardId}.name`)}</h2>
-      <img src={card.image} alt={t(`cards.${cardId}.name`)} />
-      <ul>
-        {renderProperty('eigenschaft1')}
+    <div className="card-container">
+      <div className="card-header">
+        <h2>{t(`cards.${cardId}.name`)}</h2>
+      </div>
+      <img src={card.image} alt={t(`cards.${cardId}.name`)} className="card-image" />
+      <ul className="card-properties">
+        {renderProperty('eigenschaft1')} {/* Erste Eigenschaft ohne Skala */}
         {renderProperty('eigenschaft2')}
         {renderProperty('eigenschaft3')}
         {renderProperty('eigenschaft4')}
         {renderProperty('eigenschaft5')}
       </ul>
-      <p>{t(`cards.${cardId}.textinfo`)}</p>
+      <p className="card-description">{t(`cards.${cardId}.textinfo`)}</p>
     </div>
   );
 };
