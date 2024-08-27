@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
 import CardComponent from './components/CardComponent';
 import LanguageSwitcher from './components/LanguageSwitcher';
 import cardsData from './assets/cards.json';
@@ -44,6 +45,9 @@ function App() {
   const [gameOver, setGameOver] = useState(false);
   const [gameInitialized, setGameInitialized] = useState(false);
 
+  const [isComputerCardFlipped, setIsComputerCardFlipped] = useState(true); // Standardmäßig umgedreht
+  const [animationDirection, setAnimationDirection] = useState<string | null>(null);
+
   const [lastRoundDetails, setLastRoundDetails] = useState<{
     selectedProperty: PropertyKey | null;
     playerValue: number | null;
@@ -85,51 +89,81 @@ function App() {
   const compareSelectedProperty = (property: PropertyKey) => {
     if (!currentPlayerCard || !currentComputerCard) return;
 
-    const playerValue = currentPlayerCard.eigenschaften[property];
-    const computerValue = currentComputerCard.eigenschaften[property];
+    // Karte wird zuerst umgedreht, zeigt die Vorderseite für 5 Sekunden, dreht sich dann zurück und startet danach den Vergleich
+    setIsComputerCardFlipped(false);
+    setIsComputerTurn(false);
 
-    setLastRoundDetails({
-      selectedProperty: property,
-      playerValue,
-      computerValue,
-    });
+    setTimeout(() => {
+      // Vergleichslogik ausführen, während die Karte noch sichtbar ist
+      const playerValue = currentPlayerCard.eigenschaften[property];
+      const computerValue = currentComputerCard.eigenschaften[property];
 
-    let playerWins: boolean;
-    if (propertiesWhereLowerIsBetter.includes(property)) {
-      playerWins = playerValue < computerValue;
-    } else {
-      playerWins = playerValue > computerValue;
-    }
+      setLastRoundDetails({
+        selectedProperty: property,
+        playerValue,
+        computerValue,
+      });
 
-    if (playerWins) {
-      setWinner('Player');
-      setPlayerCards([...playerCards.slice(1), currentPlayerCard, currentComputerCard, ...drawPile]);
-      setComputerCards(computerCards.slice(1));
-      setDrawPile([]);
-      setIsComputerTurn(false);
-    } else if (!playerWins && playerValue !== computerValue) {
-      setWinner('Computer');
-      setIsComputerTurn(true);
-      setComputerCards([...computerCards.slice(1), currentComputerCard, currentPlayerCard, ...drawPile]);
-      setPlayerCards(playerCards.slice(1));
-      setDrawPile([]);
-    } else {
-      setWinner('Tie');
-      setDrawPile([...drawPile, currentPlayerCard, currentComputerCard]);
-      setPlayerCards(playerCards.slice(1));
-      setComputerCards(computerCards.slice(1));
-      if (isComputerTurn) {
-        setIsComputerTurn(true);
+      let playerWins: boolean;
+      if (propertiesWhereLowerIsBetter.includes(property)) {
+        playerWins = playerValue < computerValue;
       } else {
-        setIsComputerTurn(false);
+        playerWins = playerValue > computerValue;
       }
-    }
+
+      if (playerWins) {
+        setWinner('Player');
+        setAnimationDirection('left');
+        setTimeout(() => {
+          setPlayerCards([...playerCards.slice(1), currentPlayerCard, currentComputerCard, ...drawPile]);
+          setComputerCards(computerCards.slice(1));
+          setDrawPile([]);
+          setIsComputerCardFlipped(true);
+          setAnimationDirection(null);
+        }, 500);
+      } else if (!playerWins && playerValue !== computerValue) {
+        setWinner('Computer');
+        setAnimationDirection('right');
+        setTimeout(() => {
+          setComputerCards([...computerCards.slice(1), currentComputerCard, currentPlayerCard, ...drawPile]);
+          setPlayerCards(playerCards.slice(1));
+          setDrawPile([]);
+          setIsComputerCardFlipped(true);
+          setAnimationDirection(null);
+          setIsComputerTurn(true); // Computer ist wieder an der Reihe
+        }, 500);
+      } else {
+        setWinner('Tie');
+        setAnimationDirection('up');
+        setTimeout(() => {
+          setDrawPile([...drawPile, currentPlayerCard, currentComputerCard]);
+          setPlayerCards(playerCards.slice(1));
+          setComputerCards(computerCards.slice(1));
+          setIsComputerCardFlipped(true);
+          setAnimationDirection(null);
+        }, 500);
+      }
+
+    }, 5000); // 5 Sekunden Wartezeit, bevor der Vergleich ausgeführt wird
   };
 
   const handleComputerTurn = () => {
     if (currentComputerCard) {
       const bestProperty = selectHighestPropertyForComputer(currentComputerCard);
       compareSelectedProperty(bestProperty);
+    }
+  };
+
+  const getAnimation = () => {
+    switch (animationDirection) {
+      case 'left':
+        return { x: -3000, opacity: 0 };
+      case 'right':
+        return { x: 3000, opacity: 0 };
+      case 'up':
+        return { y: -3000, opacity: 0 };
+      default:
+        return {};
     }
   };
 
@@ -146,19 +180,27 @@ function App() {
   return (
     <div className="App">
       <nav className="navbar">
-        <LanguageSwitcher /> {/* Sprachumschalter in die Navigation verschieben */}
+        <LanguageSwitcher />
       </nav>
 
       <div className="battlefield">
         <div className="card-container">
           <h2>Player ({playerCards.length})</h2>
           {currentPlayerCard ? (
-            <div className="card">
+            <motion.div
+              className="card"
+              initial={{ opacity: 0 }}
+              animate={animationDirection ? getAnimation() : { x: 0, opacity: [0, 0, 1] }} // Bewegungs- und Opazitäts-Animation
+              transition={{
+                duration: 2, // Dauer der gesamten Animation
+                opacity: { delay: 1.8, duration: 0.2 } // Opazität wird am Ende der Bewegung geändert
+              }}
+            >
               <CardComponent
                 cardId={currentPlayerCard.id}
                 onSelectProperty={!isComputerTurn ? compareSelectedProperty : undefined}
               />
-            </div>
+            </motion.div>
           ) : (
             <p>Keine Karten mehr</p>
           )}
@@ -166,14 +208,23 @@ function App() {
         <div className="card-container">
           <h2>Computer ({computerCards.length})</h2>
           {currentComputerCard ? (
-            <div className="card">
-              <CardComponent cardId={currentComputerCard.id} isComputer />
-            </div>
+            <motion.div
+              className="card"
+              initial={{ opacity: 0 }}
+              animate={animationDirection ? getAnimation() : { x: 0, opacity: [0, 0, 1] }} // Bewegungs- und Opazitäts-Animation
+              transition={{
+                duration: 2, // Dauer der gesamten Animation
+                opacity: { delay: 1.8, duration: 0.2 } // Opazität wird am Ende der Bewegung geändert
+              }}
+            >
+              <CardComponent cardId={currentComputerCard.id} isComputer isFlipped={isComputerCardFlipped} />
+            </motion.div>
           ) : (
             <p>Keine Karten mehr</p>
           )}
         </div>
       </div>
+
 
       {winner && <h3>{winner === 'Tie' ? "It's a tie!" : `${winner} wins this round!`}</h3>}
 
@@ -187,7 +238,7 @@ function App() {
         <div className="last-round-details">
           <h3>Letzte Runde:</h3>
           <p>
-            Ausgewählte Eigenschaft: {t(`eigenschaften.${lastRoundDetails.selectedProperty}`)} <br />
+            Eigenschaft: {t(`eigenschaften.${lastRoundDetails.selectedProperty}`)} <br />
             Spieler: {lastRoundDetails.playerValue} <br />
             Computer: {lastRoundDetails.computerValue}
           </p>
@@ -199,13 +250,19 @@ function App() {
           <h3>Draw Pile: {drawPile.length} Karten</h3>
           <div className="draw-pile-cards">
             {drawPile.map((card, index) => (
-              <img key={index} src={card.image} alt={card.id} style={{ width: '50px', margin: '5px' }} />
+              <motion.img
+                key={index}
+                src={card.image}
+                alt={card.id}
+                style={{ width: '50px', margin: '5px' }}
+                animate={animationDirection === 'up' ? getAnimation() : {}}
+                transition={{ duration: 1 }}
+              />
             ))}
           </div>
         </div>
       )}
     </div>
-
   );
 }
 

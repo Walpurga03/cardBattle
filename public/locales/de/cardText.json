@@ -9,35 +9,35 @@
   "cards": {
     "bitcoin": {
       "name": "Bitcoin",
-      "textinfo": "Bitcoin ist seit 2009 eine revolutionäre Währung..."
+      "textinfo": "Bitcoin ist das erste dezentrale Netzwerk, das den Transfer von Werten ohne eine zentrale Autorität ermöglicht. Die unveränderliche Stückzahl von 21 Millionen Bitcoin macht es zum knappsten Geld der Welt. Das Protokoll ist quelloffen, basiert auf einer Blockchain und ist Peer-to-Peer."
     },
     "ethereum": {
       "name": "Ethereum",
-      "textinfo": "Ethereum wurde 2015 eingeführt und ist für Smart Contracts bekannt..."
+      "textinfo": "Ethereum ist ein quelloffenes, verteiltes System, das die Erstellung, Verwaltung und Ausführung von Programmen oder Verträgen (Smart Contracts) in seiner eigenen Blockchain ermöglicht. Eine Einheit im Ethereum-Netzwerk wird als ein Ether bezeichnet."
     },
     "euro": {
       "name": "Euro",
-      "textinfo": "Der Euro wurde 1999 als Währung in Europa eingeführt..."
+      "textinfo": "Der Euro ist die offizielle Währung der Europäischen Union. Er wird von 19 der 27 EU-Mitgliedstaaten sowie von mehreren Nichtmitgliedstaaten verwendet. Er wird mit EUR abgekürzt und durch das Symbol € dargestellt. Zudem ist der Euro die am zweithäufigsten gehandelte Währung der Welt."
     },
     "monero": {
       "name": "Monero",
-      "textinfo": "Monero ist seit 2014 eine beliebte Kryptowährung für Privatsphäre..."
+      "textinfo": "Monero ist eine dezentralisierte Kryptowährung. Sie verwendet ein öffentliches verteiltes Hauptbuch mit Technologien zur Verbesserung der Privatsphäre, die Transaktionen verschleiern, um Anonymität und Fungibilität zu erreichen."
     },
     "gold": {
       "name": "Gold",
-      "textinfo": "Gold ist seit vielen Jahrhunderten als wertvolles Metall bekannt..."
+      "textinfo": "Gold ist ein Edelmetall, das seit Tausenden von Jahren als Geld verwendet wird. Es wird aufgrund seiner Seltenheit, Schönheit und Vielseitigkeit hoch geschätzt und hat bei der Entwicklung moderner Währungssysteme eine wichtige Rolle gespielt. Es ist zudem korrosionsbeständig und färbt nicht ab"
     },
     "silver": {
       "name": "Silber",
-      "textinfo": "Silber wurde schon lange vor modernen Währungen verwendet..."
+      "textinfo": "Silber ist ein Metall, das schon seit Jahrtausenden als Zahlungsmittel verwendet wird. Es ist weniger wertvoll als Gold, wird aber aufgrund seiner Seltenheit und Schönheit dennoch sehr geschätzt. Silber wurde im Laufe der Geschichte in vielen Gesellschaften zur Herstellung von Münzen und anderen Zahlungsmitteln verwendet."
     },
     "copper": {
       "name": "Kupfer",
-      "textinfo": "Kupfer wird oft als Industriemetall geschätzt..."
+      "textinfo": "Kupfer wurde im Laufe der Geschichte immer wieder als Zahlungsmittel verwendet, bereits von alten Zivilisationen wie den Ägyptern und Römern. Seine Langlebigkeit und Knappheit machten es zu einem wertvollen Material für Münzen und andere Zahlungsmittel. Heutzutage findet Kupfer vor allem in der Industrie Verwendung"
     },
     "dollar": {
       "name": "Dollar",
-      "textinfo": "Der Dollar ist eine der weltweit am häufigsten verwendeten Währungen..."
+      "textinfo": "Der US-Dollar (USD) ist die offizielle Währung der Vereinigten Staaten von Amerika und gilt als die wichtigste Reservewährung der Welt. Die Ausgabe des US-Dollars erfolgt durch die Federal Reserve, die Zentralbank der Vereinigten Staaten."
     }
   }
 }

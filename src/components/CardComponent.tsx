@@ -1,14 +1,16 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
 import cards from '../assets/cards.json';
 
 interface CardComponentProps {
   cardId: string;
   onSelectProperty?: (property: 'eigenschaft1' | 'eigenschaft2' | 'eigenschaft3' | 'eigenschaft4' | 'eigenschaft5') => void;
   isComputer?: boolean;
+  isFlipped?: boolean;
 }
 
-const CardComponent: React.FC<CardComponentProps> = ({ cardId, onSelectProperty, isComputer }) => {
+const CardComponent: React.FC<CardComponentProps> = ({ cardId, onSelectProperty, isComputer, isFlipped }) => {
   const { t } = useTranslation();
 
   const card = cards.find((card) => card.id === cardId);
@@ -17,7 +19,11 @@ const CardComponent: React.FC<CardComponentProps> = ({ cardId, onSelectProperty,
     return <div>Karte nicht gefunden!</div>;
   }
 
-  // Eigenschaftsnamen aus den Übersetzungsdateien laden
+  const flipAnimation = {
+    hidden: { rotateY: 180 },
+    visible: { rotateY: 0 },
+  };
+
   const renderProperty = (propertyKey: 'eigenschaft1' | 'eigenschaft2' | 'eigenschaft3' | 'eigenschaft4' | 'eigenschaft5') => {
     const propertyLabel = t(`eigenschaften.${propertyKey}`);
     const propertyValue = card.eigenschaften[propertyKey];
@@ -30,7 +36,6 @@ const CardComponent: React.FC<CardComponentProps> = ({ cardId, onSelectProperty,
       >
         <span className="property-label">{propertyLabel}</span>
         <span className="property-value">{propertyValue}</span>
-        {/* Nur Skala für andere Eigenschaften anzeigen */}
         {propertyKey !== 'eigenschaft1' && (
           <div className="rating-scale">
             <div
@@ -49,20 +54,32 @@ const CardComponent: React.FC<CardComponentProps> = ({ cardId, onSelectProperty,
   };
 
   return (
-    <div className="card-container">
-      <div className="card-header">
-        <h2>{t(`cards.${cardId}.name`)}</h2>
+    <motion.div
+      className="card-flip"
+      initial={isFlipped ? "hidden" : "visible"}
+      animate={isFlipped ? "hidden" : "visible"}
+      variants={flipAnimation}
+      transition={{ duration: 0.6 }}
+      style={{ transformStyle: "preserve-3d", perspective: "1000px" }}
+    >
+      <div className="card-front">
+        <div className="card-header">
+          <h2>{t(`cards.${cardId}.name`)}</h2>
+        </div>
+        <img src={card.image} alt={t(`cards.${cardId}.name`)} className="card-image" />
+        <ul className="card-properties">
+          {renderProperty('eigenschaft1')}
+          {renderProperty('eigenschaft2')}
+          {renderProperty('eigenschaft3')}
+          {renderProperty('eigenschaft4')}
+          {renderProperty('eigenschaft5')}
+        </ul>
+        <p className="card-description">{t(`cards.${cardId}.textinfo`)}</p>
       </div>
-      <img src={card.image} alt={t(`cards.${cardId}.name`)} className="card-image" />
-      <ul className="card-properties">
-        {renderProperty('eigenschaft1')} {/* Erste Eigenschaft ohne Skala */}
-        {renderProperty('eigenschaft2')}
-        {renderProperty('eigenschaft3')}
-        {renderProperty('eigenschaft4')}
-        {renderProperty('eigenschaft5')}
-      </ul>
-      <p className="card-description">{t(`cards.${cardId}.textinfo`)}</p>
-    </div>
+      <div className="card-back">
+        <img src="/assets/images/backSite.png" alt="Card Back" />
+      </div>
+    </motion.div>
   );
 };
 
