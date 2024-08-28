@@ -32,7 +32,7 @@ const CardComponent: React.FC<CardComponentProps> = ({ cardId, onSelectProperty,
       <li
         key={propertyKey}
         onClick={() => !isComputer && onSelectProperty && onSelectProperty(propertyKey)}
-        style={{ cursor: isComputer ? 'default' : 'pointer', color: isComputer ? 'grey' : 'black', margin: '10px 0' }}
+        style={{ cursor: isComputer ? 'default' : 'pointer', color: 'black', margin: '10px 0' }}
       >
         <span className="property-label">{propertyLabel}</span>
         <span className="property-value">{propertyValue}</span>

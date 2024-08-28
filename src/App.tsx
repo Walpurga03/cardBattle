@@ -5,7 +5,7 @@ import CardComponent from './components/CardComponent';
 import LanguageSwitcher from './components/LanguageSwitcher';
 import cardsData from './assets/cards.json';
 import { selectHighestPropertyForComputer } from './utils/selectHighestPropertyForComputer';
-import './App.css';
+import './App.scss';
 
 interface Card {
   id: string;
