@@ -62,7 +62,7 @@ const CardComponent: React.FC<CardComponentProps> = ({ cardId, onSelectProperty,
       transition={{ duration: 0.6 }}
       style={{ transformStyle: "preserve-3d", perspective: "1000px" }}
     >
-      <div className="card-front">
+      <div className="card card-front">
         <div className="card-header">
           <h2>{t(`cards.${cardId}.name`)}</h2>
         </div>
@@ -76,7 +76,7 @@ const CardComponent: React.FC<CardComponentProps> = ({ cardId, onSelectProperty,
         </ul>
         <p className="card-description">{t(`cards.${cardId}.textinfo`)}</p>
       </div>
-      <div className="card-back">
+      <div className="card card-back">
         <img src="/assets/images/backSite.png" alt="Card Back" />
       </div>
     </motion.div>

@@ -188,7 +188,7 @@ function App() {
           <h2>Player ({playerCards.length})</h2>
           {currentPlayerCard ? (
             <motion.div
-              className="card"
+              className="card-spieler"
               initial={{ opacity: 0 }}
               animate={animationDirection ? getAnimation() : { x: 0, opacity: [0, 0, 1] }} // Bewegungs- und Opazitäts-Animation
               transition={{
@@ -209,7 +209,7 @@ function App() {
           <h2>Computer ({computerCards.length})</h2>
           {currentComputerCard ? (
             <motion.div
-              className="card"
+              className="card-computer"
               initial={{ opacity: 0 }}
               animate={animationDirection ? getAnimation() : { x: 0, opacity: [0, 0, 1] }} // Bewegungs- und Opazitäts-Animation
               transition={{
