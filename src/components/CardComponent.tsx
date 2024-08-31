@@ -56,18 +56,19 @@ const CardComponent: React.FC<CardComponentProps> = ({ cardId, onSelectProperty,
   return (
     <motion.div
       className="card-flip"
-      initial={isFlipped ? "hidden" : "visible"}
-      animate={isFlipped ? "hidden" : "visible"}
+      initial={isFlipped ? 'hidden' : 'visible'}
+      animate={isFlipped ? 'hidden' : 'visible'}
       variants={flipAnimation}
       transition={{ duration: 0.6 }}
-      style={{ transformStyle: "preserve-3d", perspective: "1000px" }}
+      style={{ transformStyle: 'preserve-3d', perspective: '1000px' }}
     >
       <div className="card card-front">
         <div className="card-header">
           <h2>{t(`cards.${cardId}.name`)}</h2>
         </div>
         <img src={card.image} alt={t(`cards.${cardId}.name`)} className="card-image" />
-        <ul className="card-properties">
+        {/* Hier die className hinzugefügt */}
+        <ul className="card-properties-list">
           {renderProperty('eigenschaft1')}
           {renderProperty('eigenschaft2')}
           {renderProperty('eigenschaft3')}

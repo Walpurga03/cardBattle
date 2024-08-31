@@ -45,8 +45,10 @@ function App() {
   const [gameOver, setGameOver] = useState(false);
   const [gameInitialized, setGameInitialized] = useState(false);
 
-  const [isComputerCardFlipped, setIsComputerCardFlipped] = useState(true); // Standardmäßig umgedreht
+  const [isComputerCardFlipped, setIsComputerCardFlipped] = useState(true);
   const [animationDirection, setAnimationDirection] = useState<string | null>(null);
+
+  const [showWinnerMessage, setShowWinnerMessage] = useState(false);
 
   const [lastRoundDetails, setLastRoundDetails] = useState<{
     selectedProperty: PropertyKey | null;
@@ -86,15 +88,25 @@ function App() {
     }
   }, [playerCards, computerCards, gameInitialized]);
 
+  useEffect(() => {
+    if (winner) {
+      setShowWinnerMessage(true);
+
+      const timer = setTimeout(() => {
+        setShowWinnerMessage(false);
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [winner]);
+
   const compareSelectedProperty = (property: PropertyKey) => {
     if (!currentPlayerCard || !currentComputerCard) return;
 
-    // Karte wird zuerst umgedreht, zeigt die Vorderseite für 5 Sekunden, dreht sich dann zurück und startet danach den Vergleich
     setIsComputerCardFlipped(false);
     setIsComputerTurn(false);
 
     setTimeout(() => {
-      // Vergleichslogik ausführen, während die Karte noch sichtbar ist
       const playerValue = currentPlayerCard.eigenschaften[property];
       const computerValue = currentComputerCard.eigenschaften[property];
 
@@ -114,37 +126,43 @@ function App() {
       if (playerWins) {
         setWinner('Player');
         setAnimationDirection('left');
+        setShowWinnerMessage(true);
         setTimeout(() => {
           setPlayerCards([...playerCards.slice(1), currentPlayerCard, currentComputerCard, ...drawPile]);
           setComputerCards(computerCards.slice(1));
           setDrawPile([]);
           setIsComputerCardFlipped(true);
+          setIsComputerTurn(false);
           setAnimationDirection(null);
-        }, 500);
+          setShowWinnerMessage(false);
+        }, 3000);
       } else if (!playerWins && playerValue !== computerValue) {
         setWinner('Computer');
         setAnimationDirection('right');
+        setShowWinnerMessage(true);
         setTimeout(() => {
           setComputerCards([...computerCards.slice(1), currentComputerCard, currentPlayerCard, ...drawPile]);
           setPlayerCards(playerCards.slice(1));
           setDrawPile([]);
           setIsComputerCardFlipped(true);
           setAnimationDirection(null);
-          setIsComputerTurn(true); // Computer ist wieder an der Reihe
-        }, 500);
+          setIsComputerTurn(true);
+          setShowWinnerMessage(false);
+        }, 3000);
       } else {
         setWinner('Tie');
         setAnimationDirection('up');
+        setShowWinnerMessage(true);
         setTimeout(() => {
           setDrawPile([...drawPile, currentPlayerCard, currentComputerCard]);
           setPlayerCards(playerCards.slice(1));
           setComputerCards(computerCards.slice(1));
           setIsComputerCardFlipped(true);
           setAnimationDirection(null);
-        }, 500);
+          setShowWinnerMessage(false);
+        }, 3000);
       }
-
-    }, 5000); // 5 Sekunden Wartezeit, bevor der Vergleich ausgeführt wird
+    }, 5000);
   };
 
   const handleComputerTurn = () => {
@@ -157,11 +175,11 @@ function App() {
   const getAnimation = () => {
     switch (animationDirection) {
       case 'left':
-        return { x: -3000, opacity: 0 };
+        return { x: '-110%', opacity: 0 }; // Karte nach links bewegen
       case 'right':
-        return { x: 3000, opacity: 0 };
+        return { x: '1100%', opacity: 0 }; // Karte nach rechts bewegen
       case 'up':
-        return { y: -3000, opacity: 0 };
+        return { y: '-110%', opacity: 0 }; // Karte nach oben bewegen
       default:
         return {};
     }
@@ -190,10 +208,10 @@ function App() {
             <motion.div
               className="card-spieler"
               initial={{ opacity: 0 }}
-              animate={animationDirection ? getAnimation() : { x: 0, opacity: [0, 0, 1] }} // Bewegungs- und Opazitäts-Animation
+              animate={animationDirection ? getAnimation() : { x: 0, opacity: [0, 0, 1] }}
               transition={{
-                duration: 2, // Dauer der gesamten Animation
-                opacity: { delay: 1.8, duration: 0.2 } // Opazität wird am Ende der Bewegung geändert
+                duration: 2,
+                opacity: { delay: 2, duration: 2 },
               }}
             >
               <CardComponent
@@ -211,10 +229,10 @@ function App() {
             <motion.div
               className="card-computer"
               initial={{ opacity: 0 }}
-              animate={animationDirection ? getAnimation() : { x: 0, opacity: [0, 0, 1] }} // Bewegungs- und Opazitäts-Animation
+              animate={animationDirection ? getAnimation() : { x: 0, opacity: [0, 0, 1] }}
               transition={{
-                duration: 2, // Dauer der gesamten Animation
-                opacity: { delay: 1.8, duration: 0.2 } // Opazität wird am Ende der Bewegung geändert
+                duration: 2,
+                opacity: { delay: 2, duration: 2 },
               }}
             >
               <CardComponent cardId={currentComputerCard.id} isComputer isFlipped={isComputerCardFlipped} />
@@ -225,11 +243,20 @@ function App() {
         </div>
       </div>
 
-
-      {winner && <h3>{winner === 'Tie' ? "It's a tie!" : `${winner} wins this round!`}</h3>}
+      {/* Anzeige der Gewinnernachricht */}
+      {showWinnerMessage && (
+        <motion.div
+          className="winner-message"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }} // Kurze Einblendungsanimation
+        >
+          <h3>{winner === 'Tie' ? "It's a tie!" : `${winner} wins this round!`}</h3>
+        </motion.div>
+      )}
 
       {isComputerTurn && (
-        <button onClick={handleComputerTurn} style={{ marginTop: '20px' }}>
+        <button onClick={handleComputerTurn} className="button-highlight" style={{ marginTop: '20px' }}>
           Computer ist am Zug - Klicken, um fortzufahren
         </button>
       )}
