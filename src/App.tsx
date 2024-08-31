@@ -94,7 +94,7 @@ function App() {
 
       const timer = setTimeout(() => {
         setShowWinnerMessage(false);
-      }, 3000);
+      }, 5000);
 
       return () => clearTimeout(timer);
     }
@@ -135,7 +135,7 @@ function App() {
           setIsComputerTurn(false);
           setAnimationDirection(null);
           setShowWinnerMessage(false);
-        }, 3000);
+        }, 5000);
       } else if (!playerWins && playerValue !== computerValue) {
         setWinner('Computer');
         setAnimationDirection('right');
@@ -148,7 +148,7 @@ function App() {
           setAnimationDirection(null);
           setIsComputerTurn(true);
           setShowWinnerMessage(false);
-        }, 3000);
+        }, 5000);
       } else {
         setWinner('Tie');
         setAnimationDirection('up');
@@ -160,7 +160,7 @@ function App() {
           setIsComputerCardFlipped(true);
           setAnimationDirection(null);
           setShowWinnerMessage(false);
-        }, 3000);
+        }, 5000);
       }
     }, 5000);
   };
@@ -175,11 +175,11 @@ function App() {
   const getAnimation = () => {
     switch (animationDirection) {
       case 'left':
-        return { x: '-110%', opacity: 0 }; // Karte nach links bewegen
+        return { x: '-1000%', opacity: 0 }; // Karte nach links bewegen
       case 'right':
-        return { x: '1100%', opacity: 0 }; // Karte nach rechts bewegen
+        return { x: '1000%', opacity: 0 }; // Karte nach rechts bewegen
       case 'up':
-        return { y: '-110%', opacity: 0 }; // Karte nach oben bewegen
+        return { y: '-1000%', opacity: 0 }; // Karte nach oben bewegen
       default:
         return {};
     }
@@ -188,9 +188,9 @@ function App() {
   if (gameOver) {
     return (
       <div className="App">
-        <h1>Card Battle</h1>
-        <h2>Spiel beendet!</h2>
-        <h3>{winner} hat das Spiel gewonnen!</h3>
+        <h1>{t('title')}</h1>
+        <h2>{t('gameOver')}</h2>
+        <h3>{t('playerWins', { winner })}</h3>
       </div>
     );
   }
@@ -203,15 +203,15 @@ function App() {
 
       <div className="battlefield">
         <div className="card-container">
-          <h2>Player ({playerCards.length})</h2>
+          <h2>{t('player')} ({playerCards.length})</h2>
           {currentPlayerCard ? (
             <motion.div
               className="card-spieler"
               initial={{ opacity: 0 }}
               animate={animationDirection ? getAnimation() : { x: 0, opacity: [0, 0, 1] }}
               transition={{
-                duration: 2,
-                opacity: { delay: 2, duration: 2 },
+                duration: animationDirection ? 2 : 0.1, // Unterschiedliche Dauer: 0.5s für Hereingleiten, 2s für Hinausgleiten
+                opacity: { delay: animationDirection ? 2 : 0, duration: 3 } // Verzögerung und Dauer der Opazitätsänderung
               }}
             >
               <CardComponent
@@ -220,25 +220,25 @@ function App() {
               />
             </motion.div>
           ) : (
-            <p>Keine Karten mehr</p>
+            <p>{t('noMoreCards')}</p>
           )}
         </div>
         <div className="card-container">
-          <h2>Computer ({computerCards.length})</h2>
+          <h2>{t('computer')} ({computerCards.length})</h2>
           {currentComputerCard ? (
             <motion.div
               className="card-computer"
               initial={{ opacity: 0 }}
               animate={animationDirection ? getAnimation() : { x: 0, opacity: [0, 0, 1] }}
               transition={{
-                duration: 2,
-                opacity: { delay: 2, duration: 2 },
+                duration: animationDirection ? 2 : 0.1, // Unterschiedliche Dauer: 0.5s für Hereingleiten, 2s für Hinausgleiten
+                opacity: { delay: animationDirection ? 2 : 0, duration: 3 } // Verzögerung und Dauer der Opazitätsänderung
               }}
             >
               <CardComponent cardId={currentComputerCard.id} isComputer isFlipped={isComputerCardFlipped} />
             </motion.div>
           ) : (
-            <p>Keine Karten mehr</p>
+            <p>{t('noMoreCards')}</p>
           )}
         </div>
       </div>
@@ -251,23 +251,25 @@ function App() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }} // Kurze Einblendungsanimation
         >
-          <h3>{winner === 'Tie' ? "It's a tie!" : `${winner} wins this round!`}</h3>
+          <h3>{winner === 'Tie' ? t('tieMessage') : t('winMessage', { winner })}</h3>
         </motion.div>
       )}
 
       {isComputerTurn && (
         <button onClick={handleComputerTurn} className="button-highlight" style={{ marginTop: '20px' }}>
-          Computer ist am Zug - Klicken, um fortzufahren
+          {t('computerTurnButton')}
         </button>
       )}
 
       {lastRoundDetails.selectedProperty && (
         <div className="last-round-details">
-          <h3>Letzte Runde:</h3>
+          <h3>{t('lastRound')}</h3> {/* Übersetzte Überschrift */}
           <p>
-            Eigenschaft: {t(`eigenschaften.${lastRoundDetails.selectedProperty}`)} <br />
-            Spieler: {lastRoundDetails.playerValue} <br />
-            Computer: {lastRoundDetails.computerValue}
+            {lastRoundDetails.selectedProperty && t(`eigenschaften.${lastRoundDetails.selectedProperty}`)} {/* Übersetzte Eigenschaft */}
+            <br />
+            {t('player')}: {lastRoundDetails.playerValue} {/* Übersetzter Spielertext */}
+            <br />
+            {t('computer')}: {lastRoundDetails.computerValue} {/* Übersetzter Computertext */}
           </p>
         </div>
       )}

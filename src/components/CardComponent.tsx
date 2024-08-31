@@ -67,7 +67,6 @@ const CardComponent: React.FC<CardComponentProps> = ({ cardId, onSelectProperty,
           <h2>{t(`cards.${cardId}.name`)}</h2>
         </div>
         <img src={card.image} alt={t(`cards.${cardId}.name`)} className="card-image" />
-        {/* Hier die className hinzugefügt */}
         <ul className="card-properties-list">
           {renderProperty('eigenschaft1')}
           {renderProperty('eigenschaft2')}

@@ -1,4 +1,16 @@
 {
+  "title": "Card Battle",
+  "gameOver": "Spiel beendet!",
+  "playerWins": "{{winner}} hat das Spiel gewonnen!",
+  "noMoreCards": "Keine Karten mehr",
+  "computerTurnButton": "Computer ist am Zug - Klicken, um fortzufahren",
+  "lastRound": "Letzte Runde:",
+  "property": "Eigenschaft",
+  "player": "Player",
+  "computer": "Computer",
+  "drawPile": "Nachziehstapel: {{count}} Karten",
+  "tieMessage": "Es ist ein Unentschieden!",
+  "winMessage": "{{winner}} gewinnt diese Runde!",
   "eigenschaften": {
     "eigenschaft1": "Seit",
     "eigenschaft2": "Knappheit",
