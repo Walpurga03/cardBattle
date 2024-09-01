@@ -3,17 +3,18 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import cards from '../../public/assets/data/cards.json';
 
+console.log('Base URL:', import.meta.env.BASE_URL); // Überprüfe die Base URL
+
 interface CardComponentProps {
-  cardId: number; // cardId bleibt vom Typ number
+  cardId: number;
   onSelectProperty?: (property: 'eigenschaft1' | 'eigenschaft2' | 'eigenschaft3' | 'eigenschaft4' | 'eigenschaft5') => void;
   isComputer?: boolean;
   isFlipped?: boolean;
 }
 
 const CardComponent: React.FC<CardComponentProps> = ({ cardId, onSelectProperty, isComputer, isFlipped }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation(); // useTranslation Hook von i18next verwenden
 
-  // Konvertieren Sie die cardId in einen String, um sie als Übersetzungsschlüssel zu verwenden
   const cardKey = cardId.toString();
   const card = cards.find((card) => card.id === cardId);
 
@@ -21,14 +22,24 @@ const CardComponent: React.FC<CardComponentProps> = ({ cardId, onSelectProperty,
     return <div>Karte nicht gefunden!</div>;
   }
 
+  // Log die Übersetzungsschlüssel, um zu sehen, ob sie geladen werden
+  console.log('Eigenschaft 1 Translation:', t('eigenschaften.eigenschaft1'));
+  console.log('Card Name Translation:', t(`cards.${cardKey}.name`));
+  console.log('Card Text Info Translation:', t(`cards.${cardKey}.textinfo`));
+
+  const imagePath = `${import.meta.env.BASE_URL}assets/images/${card.image}`;
+  console.log('Generated Image Path:', imagePath);
+
   const flipAnimation = {
     hidden: { rotateY: 180 },
     visible: { rotateY: 0 },
   };
 
   const renderProperty = (propertyKey: 'eigenschaft1' | 'eigenschaft2' | 'eigenschaft3' | 'eigenschaft4' | 'eigenschaft5') => {
-    const propertyLabel = t(`eigenschaften.${propertyKey}`);
+    const propertyLabel = t(`eigenschaften.${propertyKey}`); // Übersetzung für die Eigenschaft
     const propertyValue = card.eigenschaften[propertyKey];
+
+    console.log('Property Translation:', propertyKey, propertyLabel); // Überprüfe die Übersetzung für jede Eigenschaft
 
     return (
       <li
@@ -66,10 +77,13 @@ const CardComponent: React.FC<CardComponentProps> = ({ cardId, onSelectProperty,
     >
       <div className="card card-front">
         <div className="card-header">
-          {/* Verwenden Sie cardKey als String, um auf die Übersetzung zuzugreifen */}
-          <h2>{cardKey ? t(`cards.${cardKey}.name`) : 'Name nicht verfügbar'}</h2>
+          <h2>{cardKey ? t(`cards.${cardKey}.name`) : 'Name nicht verfügbar'}</h2> {/* Übersetzung für den Kartenname */}
         </div>
-        <img src={card.image} alt={cardKey ? t(`cards.${cardKey}.name`) : ''} className="card-image" />
+        <img
+          src={imagePath} // Verwende den generierten Bildpfad
+          alt={cardKey ? t(`cards.${cardKey}.name`) : ''}
+          className="card-image"
+        />
         <ul className="card-properties-list">
           {renderProperty('eigenschaft1')}
           {renderProperty('eigenschaft2')}
@@ -77,11 +91,13 @@ const CardComponent: React.FC<CardComponentProps> = ({ cardId, onSelectProperty,
           {renderProperty('eigenschaft4')}
           {renderProperty('eigenschaft5')}
         </ul>
-        {/* Verwenden Sie cardKey als String, um auf die Übersetzung zuzugreifen */}
-        <p className="card-description">{cardKey ? t(`cards.${cardKey}.textinfo`) : 'Beschreibung nicht verfügbar'}</p>
+        <p className="card-description">{cardKey ? t(`cards.${cardKey}.textinfo`) : 'Beschreibung nicht verfügbar'}</p> {/* Übersetzung für die Kartentextinfo */}
       </div>
       <div className="card card-back">
-        <img src="/assets/images/backSite.png" alt="Card Back" />
+        <img
+          src={`${import.meta.env.BASE_URL}assets/images/backSite.png`} // Pfad für die Rückseite der Karte
+          alt="Card Back"
+        />
       </div>
     </motion.div>
   );

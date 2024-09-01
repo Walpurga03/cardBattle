@@ -11,11 +11,14 @@ i18n
     fallbackLng: 'en',
     debug: true,
     backend: {
-      loadPath: '/locales/{{lng}}/cardText.json'
+      // Dynamischer Pfad basierend auf der Umgebungsbasis-URL
+      loadPath: `${import.meta.env.BASE_URL}locales/{{lng}}/cardText.json`
     },
     interpolation: {
-      escapeValue: false // React already does escaping
-    }
+      escapeValue: false, // React already does escaping
+    },
   });
+
+console.log('i18n configuration loaded with base URL:', import.meta.env.BASE_URL); // Log-Ausgabe hinzufügen
 
 export default i18n;

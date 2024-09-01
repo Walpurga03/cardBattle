@@ -1,8 +1,8 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-// https://vitejs.dev/config/
+// Dynamische Basis-URL für die Entwicklung und Produktion
 export default defineConfig({
   plugins: [react()],
-  base:  "/cardBattle/",
-})
+  base: process.env.NODE_ENV === 'production' ? '/cardBattle/' : '/', // Basis-URL dynamisch setzen
+});
