@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import CardComponent from './components/CardComponent';
 import LanguageSwitcher from './components/LanguageSwitcher';
-import cardsData from '/home/linux/projects/cardBattle/public/assets/data/cards.json';
+import cardsData from '../public/assets/data/cards.json';
 import { selectHighestPropertyForComputer } from './utils/selectHighestPropertyForComputer';
 import './App.scss';
 

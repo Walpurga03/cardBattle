@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import cards from '/home/linux/projects/cardBattle/public/assets/data/cards.json';
+import cards from '../../public/assets/data/cards.json';
 
 interface CardComponentProps {
   cardId: number; // cardId bleibt vom Typ number
