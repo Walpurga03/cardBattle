@@ -1,7 +1,8 @@
 [
   {
-    "id": "bitcoin",
-    "image": "/assets/images/bitcoin.png",
+    "id": 1,
+    "name": "Bitcoin",
+    "image": "/assets/images/1.png",
     "eigenschaften": {
       "eigenschaft1": 2009,
       "eigenschaft2": 5,
@@ -11,8 +12,9 @@
     }
   },
   {
-    "id": "ethereum",
-    "image": "/assets/images/ethereum.png",
+    "id": 2,
+    "name": "Ethereum",
+    "image": "/assets/images/2.png",
     "eigenschaften": {
       "eigenschaft1": 2015,
       "eigenschaft2": 4,
@@ -22,8 +24,9 @@
     }
   },
   {
-    "id": "euro",
-    "image": "/assets/images/euro.png",
+    "id": 3,
+    "name": "Euro",
+    "image": "/assets/images/3.png",
     "eigenschaften": {
       "eigenschaft1": 1999,
       "eigenschaft2": 3,
@@ -33,8 +36,9 @@
     }
   },
   {
-    "id": "monero",
-    "image": "/assets/images/monero.png",
+    "id": 4,
+    "name": "Monero",
+    "image": "/assets/images/4.png",
     "eigenschaften": {
       "eigenschaft1": 2014,
       "eigenschaft2": 4,
@@ -44,8 +48,9 @@
     }
   },
   {
-    "id": "gold",
-    "image": "/assets/images/gold.png",
+    "id": 5,
+    "name": "Gold",
+    "image": "/assets/images/5.png",
     "eigenschaften": {
       "eigenschaft1": -6000,
       "eigenschaft2": 4,
@@ -55,8 +60,9 @@
     }
   },
   {
-    "id": "silver",
-    "image": "/assets/images/silver.png",
+    "id": 6,
+    "name": "Silber",
+    "image": "/assets/images/6.png",
     "eigenschaften": {
       "eigenschaft1": -5000,
       "eigenschaft2": 2,
@@ -66,8 +72,9 @@
     }
   },
   {
-    "id": "copper",
-    "image": "/assets/images/copper.png",
+    "id": 7,
+    "name": "Kupfer",
+    "image": "/assets/images/7.png",
     "eigenschaften": {
       "eigenschaft1": -8000,
       "eigenschaft2": 3,
@@ -77,8 +84,9 @@
     }
   },
   {
-    "id": "dollar",
-    "image": "/assets/images/dollar.png",
+    "id": 8,
+    "name": "Dollar",
+    "image": "/assets/images/8.png",
     "eigenschaften": {
       "eigenschaft1": 1785,
       "eigenschaft2": 1,

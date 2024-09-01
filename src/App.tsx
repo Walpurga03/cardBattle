@@ -3,12 +3,13 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import CardComponent from './components/CardComponent';
 import LanguageSwitcher from './components/LanguageSwitcher';
-import cardsData from './assets/cards.json';
+import cardsData from '/home/linux/projects/cardBattle/public/assets/data/cards.json';
 import { selectHighestPropertyForComputer } from './utils/selectHighestPropertyForComputer';
 import './App.scss';
 
 interface Card {
-  id: string;
+  id: number; // Beibehalten als number
+  name: string; // Fügen Sie den Namen hinzu, um die Übersetzungen zu identifizieren
   image: string;
   eigenschaften: {
     eigenschaft1: number;
@@ -202,6 +203,7 @@ function App() {
       </nav>
 
       <div className="battlefield">
+        {/* Spieler-Kartenbereich */}
         <div className="card-container">
           <h2>{t('player')} ({playerCards.length})</h2>
           {currentPlayerCard ? (
@@ -210,8 +212,8 @@ function App() {
               initial={{ opacity: 0 }}
               animate={animationDirection ? getAnimation() : { x: 0, opacity: [0, 0, 1] }}
               transition={{
-                duration: animationDirection ? 2 : 0.1, // Unterschiedliche Dauer: 0.5s für Hereingleiten, 2s für Hinausgleiten
-                opacity: { delay: animationDirection ? 2 : 0, duration: 3 } // Verzögerung und Dauer der Opazitätsänderung
+                duration: animationDirection ? 2 : 0.1,
+                opacity: { delay: animationDirection ? 2 : 0, duration: 3 }
               }}
             >
               <CardComponent
@@ -223,6 +225,8 @@ function App() {
             <p>{t('noMoreCards')}</p>
           )}
         </div>
+
+        {/* Computer-Kartenbereich */}
         <div className="card-container">
           <h2>{t('computer')} ({computerCards.length})</h2>
           {currentComputerCard ? (
@@ -231,11 +235,16 @@ function App() {
               initial={{ opacity: 0 }}
               animate={animationDirection ? getAnimation() : { x: 0, opacity: [0, 0, 1] }}
               transition={{
-                duration: animationDirection ? 2 : 0.1, // Unterschiedliche Dauer: 0.5s für Hereingleiten, 2s für Hinausgleiten
-                opacity: { delay: animationDirection ? 2 : 0, duration: 3 } // Verzögerung und Dauer der Opazitätsänderung
+                duration: animationDirection ? 2 : 0.1,
+                opacity: { delay: animationDirection ? 2 : 0, duration: 3 }
               }}
             >
-              <CardComponent cardId={currentComputerCard.id} isComputer isFlipped={isComputerCardFlipped} />
+
+              <CardComponent
+                cardId={currentComputerCard.id}
+                isComputer
+                isFlipped={isComputerCardFlipped}
+              />
             </motion.div>
           ) : (
             <p>{t('noMoreCards')}</p>
@@ -243,46 +252,49 @@ function App() {
         </div>
       </div>
 
-      {/* Anzeige der Gewinnernachricht */}
+      {/* Gewinner-Nachricht */}
       {showWinnerMessage && (
         <motion.div
           className="winner-message"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }} // Kurze Einblendungsanimation
+          transition={{ duration: 0.5 }}
         >
           <h3>{winner === 'Tie' ? t('tieMessage') : t('winMessage', { winner })}</h3>
         </motion.div>
       )}
 
+      {/* Computer-Zug Button */}
       {isComputerTurn && (
         <button onClick={handleComputerTurn} className="button-highlight" style={{ marginTop: '20px' }}>
           {t('computerTurnButton')}
         </button>
       )}
 
+      {/* Details zur letzten Runde */}
       {lastRoundDetails.selectedProperty && (
         <div className="last-round-details">
-          <h3>{t('lastRound')}</h3> {/* Übersetzte Überschrift */}
+          <h3>{t('lastRound')}</h3>
           <p>
-            {lastRoundDetails.selectedProperty && t(`eigenschaften.${lastRoundDetails.selectedProperty}`)} {/* Übersetzte Eigenschaft */}
+            {lastRoundDetails.selectedProperty && t(`eigenschaften.${lastRoundDetails.selectedProperty}`)}
             <br />
-            {t('player')}: {lastRoundDetails.playerValue} {/* Übersetzter Spielertext */}
+            {t('player')}: {lastRoundDetails.playerValue}
             <br />
-            {t('computer')}: {lastRoundDetails.computerValue} {/* Übersetzter Computertext */}
+            {t('computer')}: {lastRoundDetails.computerValue}
           </p>
         </div>
       )}
 
+      {/* Nachziehstapel */}
       {drawPile.length > 0 && (
         <div className="draw-pile">
-          <h3>Draw Pile: {drawPile.length} Karten</h3>
+          <h3>{t('drawPile', { count: drawPile.length })}</h3>
           <div className="draw-pile-cards">
             {drawPile.map((card, index) => (
               <motion.img
                 key={index}
                 src={card.image}
-                alt={card.id}
+                alt={card.name}
                 style={{ width: '50px', margin: '5px' }}
                 animate={animationDirection === 'up' ? getAnimation() : {}}
                 transition={{ duration: 1 }}
@@ -292,6 +304,7 @@ function App() {
         </div>
       )}
     </div>
+
   );
 }
 

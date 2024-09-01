@@ -1,10 +1,10 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import cards from '../assets/cards.json';
+import cards from '/home/linux/projects/cardBattle/public/assets/data/cards.json';
 
 interface CardComponentProps {
-  cardId: string;
+  cardId: number; // cardId bleibt vom Typ number
   onSelectProperty?: (property: 'eigenschaft1' | 'eigenschaft2' | 'eigenschaft3' | 'eigenschaft4' | 'eigenschaft5') => void;
   isComputer?: boolean;
   isFlipped?: boolean;
@@ -13,6 +13,8 @@ interface CardComponentProps {
 const CardComponent: React.FC<CardComponentProps> = ({ cardId, onSelectProperty, isComputer, isFlipped }) => {
   const { t } = useTranslation();
 
+  // Konvertieren Sie die cardId in einen String, um sie als Übersetzungsschlüssel zu verwenden
+  const cardKey = cardId.toString();
   const card = cards.find((card) => card.id === cardId);
 
   if (!card) {
@@ -64,9 +66,10 @@ const CardComponent: React.FC<CardComponentProps> = ({ cardId, onSelectProperty,
     >
       <div className="card card-front">
         <div className="card-header">
-          <h2>{t(`cards.${cardId}.name`)}</h2>
+          {/* Verwenden Sie cardKey als String, um auf die Übersetzung zuzugreifen */}
+          <h2>{cardKey ? t(`cards.${cardKey}.name`) : 'Name nicht verfügbar'}</h2>
         </div>
-        <img src={card.image} alt={t(`cards.${cardId}.name`)} className="card-image" />
+        <img src={card.image} alt={cardKey ? t(`cards.${cardKey}.name`) : ''} className="card-image" />
         <ul className="card-properties-list">
           {renderProperty('eigenschaft1')}
           {renderProperty('eigenschaft2')}
@@ -74,7 +77,8 @@ const CardComponent: React.FC<CardComponentProps> = ({ cardId, onSelectProperty,
           {renderProperty('eigenschaft4')}
           {renderProperty('eigenschaft5')}
         </ul>
-        <p className="card-description">{t(`cards.${cardId}.textinfo`)}</p>
+        {/* Verwenden Sie cardKey als String, um auf die Übersetzung zuzugreifen */}
+        <p className="card-description">{cardKey ? t(`cards.${cardKey}.textinfo`) : 'Beschreibung nicht verfügbar'}</p>
       </div>
       <div className="card card-back">
         <img src="/assets/images/backSite.png" alt="Card Back" />
