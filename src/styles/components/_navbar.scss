@@ -1,0 +1,29 @@
+// Navigation Styling
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px 20px;
+  background-color: transparent;
+  z-index: 1000;
+
+  .language-switcher {
+    display: flex;
+    gap: $gap-small;
+
+    button {
+      background-color: $button-bg-color;
+      color: black;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $button-hover-bg-color;
+      }
+    }
+  }
+}

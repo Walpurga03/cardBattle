@@ -1,0 +1,60 @@
+// Karten Styling
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+// Kartenheader
+.card-header {
+  position: absolute;
+  background-color: $header-bg-color;
+  color: $header-text-color;
+  padding: 0px 5px;
+  border-radius: 0 0 10px 10px;
+  width: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  top: 10px;
+  text-align: center;
+  font-weight: bold;
+
+  h2 {
+    margin: 0.2em 1em;
+  }
+}
+
+.card-spieler,
+.card-computer {
+  position: relative;
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  aspect-ratio: $card-aspect-ratio;
+  border-radius: $card-radius;
+  overflow: hidden;
+  transition: transform $transition-duration;
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+}
+
+// Umdreheffekt und Rückseite der Karte
+.card-flip {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform $transition-duration;
+  perspective: 1000px;
+}
+
+// Weitere Karten Styles...

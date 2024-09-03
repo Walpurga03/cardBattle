@@ -317,3 +317,20 @@ $card-aspect-ratio: 0.75; // Verwende den Dezimalwert anstelle von Division (3/4
     font-size: 0.6em;
   }
 }
+
+.orientation-warning {
+  display: flex;
+  justify-content: center; /* Zentriert horizontal */
+  align-items: center; /* Zentriert vertikal */
+  position: fixed; /* Fixiere die Nachricht */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Halbtransparentes Overlay */
+  color: white; /* Textfarbe */
+  font-size: 1.5rem; /* Schriftgröße */
+  text-align: center; /* Text zentriert */
+  z-index: 1000; /* Sicherstellen, dass es über anderen Inhalten liegt */
+}
+
