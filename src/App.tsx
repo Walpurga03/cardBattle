@@ -104,18 +104,6 @@ function App() {
       {drawPile.length > 0 && (
         <div className="draw-pile">
           <h3>{t('drawPile', { count: drawPile.length })}</h3>
-          <div className="draw-pile-cards">
-            {drawPile.map((card, index) => (
-              <motion.img
-                key={index}
-                src={card.image}
-                alt={card.name}
-                style={{ width: '50px', margin: '5px' }}
-                animate={animationDirection === 'up' ? getAnimation(animationDirection) : {}}
-                transition={{ duration: 1 }}
-              />
-            ))}
-          </div>
         </div>
       )}
     </div>
