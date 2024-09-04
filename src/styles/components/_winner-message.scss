@@ -1,0 +1,16 @@
+.winner-message {
+  position: fixed; // Fixiert die Nachricht unabhängig von der Bewegung der Karten
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); // Zentriert die Nachricht auf dem Bildschirm
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 2000; // Höherer Z-Index, um sicherzustellen, dass die Nachricht über anderen Elementen bleibt
+  text-align: center;
+  font-size: 2em; // Größere Schriftgröße
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  pointer-events: none; // Verhindert, dass die Nachricht auf andere Interaktionen reagiert
+}

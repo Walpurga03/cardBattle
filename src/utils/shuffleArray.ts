@@ -1,4 +1,4 @@
-import { Card } from '../App';
+import { Card } from '../types/Card';
 
 export function shuffleArray(array: Card[]): Card[] {
   for (let i = array.length - 1; i > 0; i--) {

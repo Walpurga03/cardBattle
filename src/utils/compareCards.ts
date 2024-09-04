@@ -1,6 +1,6 @@
 // utils/compareCards.ts
 
-import { Card, PropertyKey } from '../App';
+import { Card, PropertyKey } from '../types/Card'
 
 interface CompareResult {
   winner: 'Player' | 'Computer' | 'Tie';
