@@ -1,6 +1,4 @@
-import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { getAnimation } from './utils/animations';
 import { useOrientation } from './hooks/useOrientation';
 import useGameInitialization from './hooks/useGameInitialization';
 import useGameState from './hooks/useGameState';
@@ -9,8 +7,6 @@ import PlayerArea from './components/PlayerArea';
 import ComputerArea from './components/ComputerArea';
 import WinnerMessage from './components/WinnerMessage';
 import './styles/main.scss';
-
-
 
 function App() {
   const { t } = useTranslation();
