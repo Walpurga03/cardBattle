@@ -11,6 +11,7 @@
   "drawPile": "Draw Pile: {{count}} cards",
   "tieMessage": "It's a tie!",
   "winMessage": "{{winner}} wins this round!",
+  "orientationWarning": "Please turn your device into landscape format to use the application.",
   "eigenschaften": {
     "eigenschaft1": "Age",
     "eigenschaft2": "Scarcity",

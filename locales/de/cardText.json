@@ -11,6 +11,7 @@
   "drawPile": "Nachziehstapel: {{count}} Karten",
   "tieMessage": "Es ist ein Unentschieden!",
   "winMessage": "{{winner}} gewinnt diese Runde!",
+  "orientationWarning": "Bitte drehen Sie Ihr Gerät ins Querformat, um die Anwendung zu verwenden.",
   "eigenschaften": {
     "eigenschaft1": "Seit",
     "eigenschaft2": "Knappheit",
