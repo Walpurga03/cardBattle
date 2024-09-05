@@ -1,5 +1,5 @@
 {
-  "title": "Spiel",
+  "title": "Card Battle",
   "gameOver": "Spiel beendet!",
   "playerWins": "{{winner}} hat das Spiel gewonnen!",
   "noMoreCards": "Keine Karten mehr",
@@ -13,20 +13,24 @@
   "winMessage": "{{winner}} gewinnt diese Runde!",
   "orientationWarning": "Bitte drehen Sie Ihr Gerät ins Querformat, um die Anwendung zu verwenden.",
   "eigenschaften": {
-    "eigenschaft1": "b",
-    "eigenschaft2": "b",
-    "eigenschaft3": "b",
-    "eigenschaft4": "b",
-    "eigenschaft5": "b"
+    "eigenschaft1": "Seit",
+    "eigenschaft2": "Knappheit",
+    "eigenschaft3": "Langlebigkeit",
+    "eigenschaft4": "Teilbarkeit",
+    "eigenschaft5": "Transportfähigkeit"
   },
   "cards": {
     "1": {
       "name": "Bitcoin",
-      "textinfo": "Deutsch Bitcoin"
+      "textinfo": "Bitcoin ist das erste dezentrale Netzwerk, das den Transfer von Werten ohne eine zentrale Autorität ermöglicht. Die unveränderliche Stückzahl von 21 Millionen Bitcoin macht es zum knappsten Geld der Welt. Das Protokoll ist quelloffen, basiert auf einer Blockchain und ist Peer-to-Peer."
     },
     "2": {
       "name": "Ethereum",
       "textinfo": "Ethereum ist ein quelloffenes, verteiltes System, das die Erstellung, Verwaltung und Ausführung von Programmen oder Verträgen (Smart Contracts) in seiner eigenen Blockchain ermöglicht. Eine Einheit im Ethereum-Netzwerk wird als ein Ether bezeichnet."
+    },
+    "3": {
+      "name": "Euro",
+      "textinfo": "Der Euro ist die offizielle Währung der Europäischen Union. Er wird von 19 der 27 EU-Mitgliedstaaten sowie von mehreren Nichtmitgliedstaaten verwendet. Er wird mit EUR abgekürzt und durch das Symbol € dargestellt. Zudem ist der Euro die am zweithäufigsten gehandelte Währung der Welt."
     },
     "4": {
       "name": "Monero",
@@ -47,10 +51,6 @@
     "8": {
       "name": "Dollar",
       "textinfo": "Der US-Dollar (USD) ist die offizielle Währung der Vereinigten Staaten von Amerika und gilt als die wichtigste Reservewährung der Welt. Die Ausgabe des US-Dollars erfolgt durch die Federal Reserve, die Zentralbank der Vereinigten Staaten."
-    },
-    "3": {
-      "name": "Euro",
-      "textinfo": "Deutsch Euro"
     }
   }
 }
