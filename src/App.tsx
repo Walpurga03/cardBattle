@@ -17,7 +17,7 @@ function App() {
   const isPortrait = useOrientation();
   const [isAnimationComplete, setIsAnimationComplete] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false); // Zustand für Musik
-  const musicSrc = '/audio/WasIstGeldFuerDich.mp3'; // Pfad zur Musikdatei
+  const musicSrc = '../../public/audio/WasIstGeldFuerDich.mp3'; // Pfad zur Musikdatei
 
   const {
     playerCards,
