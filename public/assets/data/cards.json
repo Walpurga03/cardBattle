@@ -4,10 +4,10 @@
     "name": "Bitcoin",
     "image": "1.png",
     "eigenschaften": {
-      "eigenschaft1": 5,
+      "eigenschaft1": 2009,
       "eigenschaft2": 5,
-      "eigenschaft3": 5,
-      "eigenschaft4": 4,
+      "eigenschaft3": 1,
+      "eigenschaft4": 5,
       "eigenschaft5": 5
     }
   },
@@ -21,6 +21,18 @@
       "eigenschaft3": 2,
       "eigenschaft4": 4,
       "eigenschaft5": 4
+    }
+  },
+  {
+    "id": 3,
+    "name": "Euro",
+    "image": "3.png",
+    "eigenschaften": {
+      "eigenschaft1": 1999,
+      "eigenschaft2": 3,
+      "eigenschaft3": 3,
+      "eigenschaft4": 3,
+      "eigenschaft5": 3
     }
   },
   {
@@ -81,18 +93,6 @@
       "eigenschaft3": 3,
       "eigenschaft4": 4,
       "eigenschaft5": 4
-    }
-  },
-  {
-    "id": 3,
-    "name": "Euro",
-    "image": "3.png",
-    "eigenschaften": {
-      "eigenschaft1": 2,
-      "eigenschaft2": 2,
-      "eigenschaft3": 2,
-      "eigenschaft4": 2,
-      "eigenschaft5": 2
     }
   }
 ]

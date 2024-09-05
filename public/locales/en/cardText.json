@@ -1,5 +1,5 @@
 {
-  "title": "Game",
+  "title": "Card Battle",
   "gameOver": "Game Over!",
   "playerWins": "{{winner}} won the game!",
   "noMoreCards": "No more cards",
@@ -13,20 +13,24 @@
   "winMessage": "{{winner}} wins this round!",
   "orientationWarning": "Please turn your device into landscape format to use the application.",
   "eigenschaften": {
-    "eigenschaft1": "a",
-    "eigenschaft2": "a",
-    "eigenschaft3": "a",
-    "eigenschaft4": "a",
-    "eigenschaft5": "a"
+    "eigenschaft1": "Age",
+    "eigenschaft2": "Scarcity",
+    "eigenschaft3": "Durability",
+    "eigenschaft4": "Divisibility",
+    "eigenschaft5": "Transportability"
   },
   "cards": {
     "1": {
       "name": "Bitcoin",
-      "textinfo": "English Bitcoin"
+      "textinfo": "Bitcoin is the first decentralized network that allows the transfer of value without a central authority. The immutable supply of 21 million Bitcoin makes it the most scarce money in the world. The protocol is open-source, based on a blockchain, and peer-to-peer."
     },
     "2": {
       "name": "Ethereum",
       "textinfo": "Ethereum is an open-source, distributed system that allows the creation, management, and execution of programs or contracts (Smart Contracts) on its own blockchain. A unit in the Ethereum network is called an Ether."
+    },
+    "3": {
+      "name": "Euro",
+      "textinfo": "The Euro is the official currency of the European Union. It is used by 19 of the 27 EU member states as well as several non-member states. It is abbreviated as EUR and represented by the symbol €. The Euro is also the second most traded currency in the world."
     },
     "4": {
       "name": "Monero",
@@ -47,10 +51,6 @@
     "8": {
       "name": "Dollar",
       "textinfo": "The US Dollar (USD) is the official currency of the United States of America and is considered the world's primary reserve currency. The issuance of the US Dollar is managed by the Federal Reserve, the central bank of the United States."
-    },
-    "3": {
-      "name": "Euro",
-      "textinfo": "Englisch euro"
     }
   }
 }

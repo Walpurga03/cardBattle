@@ -6,11 +6,19 @@ import LanguageSwitcher from './components/LanguageSwitcher';
 import PlayerArea from './components/PlayerArea';
 import ComputerArea from './components/ComputerArea';
 import WinnerMessage from './components/WinnerMessage';
+import StartAnimation from './components/StartAnimation';
+import MusicButton from './components/MusicButton';
+import BackgroundMusic from './components/BackgroundMusic';
+import { useState } from 'react';
 import './styles/main.scss';
 
 function App() {
   const { t } = useTranslation();
   const isPortrait = useOrientation();
+  const [isAnimationComplete, setIsAnimationComplete] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false); // Zustand für Musik
+  const musicSrc = '/audio/WasIstGeldFuerDich.mp3'; // Pfad zur Musikdatei
+
   const {
     playerCards,
     computerCards,
@@ -32,6 +40,10 @@ function App() {
     handlePropertySelect,
     handleComputerTurn,
   } = useGameState(playerCards, computerCards, setPlayerCards, setComputerCards);
+
+  if (!isAnimationComplete) {
+    return <StartAnimation onAnimationEnd={() => setIsAnimationComplete(true)} />;
+  }
 
   if (isPortrait) {
     return (
@@ -55,7 +67,10 @@ function App() {
     <div className="App">
       <nav className="navbar">
         <LanguageSwitcher />
+        <MusicButton isPlaying={isPlaying} toggleMusic={() => setIsPlaying(!isPlaying)} />
       </nav>
+
+      <BackgroundMusic src={musicSrc} playing={isPlaying} /> {/* Füge die BackgroundMusic-Komponente hinzu */}
 
       <div className="battlefield">
         <PlayerArea
