@@ -19,8 +19,9 @@ const EndAnimation = ({ playerWon }: { playerWon: boolean }) => {
 
       // Einen Bildindex der Reihe nach auswählen, beginnend mit 0, und wieder von vorne beginnen, wenn das Ende erreicht ist
       const cardIndex = i % cardsData.length;
-      const cardImage = `/assets/images/${cardsData[cardIndex].image}`; // Korrigiere den Pfad zum Bild
-      const cardName = cardsData[cardIndex].name; // Name des Bildes
+      const card = cardsData[cardIndex];
+      const cardImage = `${import.meta.env.BASE_URL}assets/images/${card.image}`; // Verwende den generierten Bildpfad
+      const cardName = card.name; // Name des Bildes
 
       // Erstellen Sie ein <img> Element für das Bild
       const imgElement = document.createElement('img');

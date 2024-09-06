@@ -1,0 +1,95 @@
+
+/* Info-Button */
+.info-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100; /* Stelle sicher, dass der Button über anderen Elementen liegt */
+  background-color: $primary-light-color;
+  color: $secondary-color;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: $primary-dark-color;
+    color: $text-color;
+  }
+}
+
+/* Popup-Overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: start; /* Ändert die vertikale Ausrichtung, damit das Popup oben beginnt */
+  padding-top: 10vh; /* Fügt oben einen Abstand ein, für bessere Sichtbarkeit */
+  background-color: rgba(0, 0, 0, 0.8); /* Halbtransparentes Schwarz */
+  z-index: 101;
+}
+
+/* Popup-Content */
+.popup-content {
+  background-color: $primary-color;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 80%; /* Setzt die Breite auf 80% des Viewports */
+  max-width: 600px; /* Setzt eine maximale Breite */
+  max-height: 80vh; /* Maximale Höhe des Popups, um sicherzustellen, dass es scrollbar ist */
+  overflow-y: auto; /* Ermöglicht das Scrollen nach unten, falls der Inhalt die maximale Höhe überschreitet */
+  color: $secondary-color;
+}
+
+/* Properties-Info */
+.properties-info h2 {
+  color: $text-color;
+  font-size: 2em;
+  margin-top: 20px;
+}
+
+.properties-info h3 {
+  color: $text-color;
+  margin: 0px;
+}
+
+.properties-info ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0.2em 0 0.7em;
+  color: $text-color;
+
+}
+
+.properties-info li {
+  text-align: left;
+  margin-left: 10px;
+}
+
+/* Schließen-Button */
+.schliesen-button {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  display: flex;
+  justify-content: center;
+}
+
+.schliesen-button .button {
+  background-color: $primary-color;
+  color: $secondary-color;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: $primary-dark-color;
+  }
+}

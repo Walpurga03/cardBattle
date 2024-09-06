@@ -21,7 +21,6 @@ const CardComponent: React.FC<CardComponentProps> = ({ cardId, onSelectProperty,
   }
 
   // Log die Übersetzungsschlüssel, um zu sehen, ob sie geladen werden
-
   const imagePath = `${import.meta.env.BASE_URL}assets/images/${card.image}`;
 
   const flipAnimation = {

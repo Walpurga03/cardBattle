@@ -3,6 +3,7 @@ import { useOrientation } from './hooks/useOrientation';
 import useGameInitialization from './hooks/useGameInitialization';
 import useGameState from './hooks/useGameState';
 import LanguageSwitcher from './components/LanguageSwitcher';
+import InfoPopup from './components/InfoPopup';
 import PlayerArea from './components/PlayerArea';
 import ComputerArea from './components/ComputerArea';
 import WinnerMessage from './components/WinnerMessage';
@@ -11,6 +12,7 @@ import MusicButton from './components/MusicButton';
 import BackgroundMusic from './components/BackgroundMusic';
 import EndAnimation from './components/EndAnimation';
 import { useState } from 'react';
+
 import './styles/main.scss';
 
 function App() {
@@ -68,6 +70,7 @@ function App() {
       <nav className="navbar">
         <LanguageSwitcher />
         <MusicButton isPlaying={isPlaying} toggleMusic={() => setIsPlaying(!isPlaying)} />
+        <InfoPopup />
       </nav>
 
       <BackgroundMusic src={musicSrc} playing={isPlaying} /> {/* Füge die BackgroundMusic-Komponente hinzu */}
