@@ -9,6 +9,7 @@ import WinnerMessage from './components/WinnerMessage';
 import StartAnimation from './components/StartAnimation';
 import MusicButton from './components/MusicButton';
 import BackgroundMusic from './components/BackgroundMusic';
+import EndAnimation from './components/EndAnimation';
 import { useState } from 'react';
 import './styles/main.scss';
 
@@ -17,7 +18,7 @@ function App() {
   const isPortrait = useOrientation();
   const [isAnimationComplete, setIsAnimationComplete] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false); // Zustand für Musik
-  const musicSrc = '../../public/audio/WasIstGeldFuerDich.mp3'; // Pfad zur Musikdatei
+  const musicSrc = 'https://walpurga03.github.io/cardBattle/audio/WasIstGeldFuerDich.mp3'; // Pfad zur Musikdatei
 
   const {
     playerCards,
@@ -54,11 +55,10 @@ function App() {
   }
 
   if (gameOver) {
+    console.log('Game over, rendering EndAnimation');
     return (
       <div className="App">
-        <h1>{t('title')}</h1>
-        <h2>{t('gameOver')}</h2>
-        <h3>{t('playerWins', { winner })}</h3>
+        <EndAnimation playerWon={winner === 'Player'} /> {/* Füge die EndAnimation-Komponente hinzu */}
       </div>
     );
   }

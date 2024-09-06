@@ -1,0 +1,79 @@
+.end-animation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Halbtransparentes Schwarz */
+    z-index: 1000; /* Sicherstellen, dass es über anderen Elementen liegt */
+}
+
+.end-animation-content {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #333; /* Dunkler Hintergrund */
+    animation: fadeIn 1s ease-in-out;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Zentrieren */
+  }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.end-animation-message {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.end-animation-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color:$primary-dark-color; /* Grün */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 1001; /* Sicherstellen, dass es über anderen Elementen liegt */
+}
+
+.end-animation-button:hover {
+    background-color:$primary-light-color; /* Dunkleres Grün beim Hover */
+    color: $secondary-dark-color;
+}
+
+.endAnimBody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Halbtransparentes Schwarz */
+    z-index: 1000; /* Sicherstellen, dass es über anderen Elementen liegt */
+}
+
+.endAnimBody h2 {
+    color: #fff;
+    font-size: 3rem;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}

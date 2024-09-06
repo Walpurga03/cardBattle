@@ -3,8 +3,6 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import cards from '../../public/assets/data/cards.json';
 
-console.log('Base URL:', import.meta.env.BASE_URL); // Überprüfe die Base URL
-
 interface CardComponentProps {
   cardId: number;
   onSelectProperty?: (property: 'eigenschaft1' | 'eigenschaft2' | 'eigenschaft3' | 'eigenschaft4' | 'eigenschaft5') => void;
@@ -23,12 +21,8 @@ const CardComponent: React.FC<CardComponentProps> = ({ cardId, onSelectProperty,
   }
 
   // Log die Übersetzungsschlüssel, um zu sehen, ob sie geladen werden
-  console.log('Eigenschaft 1 Translation:', t('eigenschaften.eigenschaft1'));
-  console.log('Card Name Translation:', t(`cards.${cardKey}.name`));
-  console.log('Card Text Info Translation:', t(`cards.${cardKey}.textinfo`));
 
   const imagePath = `${import.meta.env.BASE_URL}assets/images/${card.image}`;
-  console.log('Generated Image Path:', imagePath);
 
   const flipAnimation = {
     hidden: { rotateY: 180 },
@@ -38,8 +32,6 @@ const CardComponent: React.FC<CardComponentProps> = ({ cardId, onSelectProperty,
   const renderProperty = (propertyKey: 'eigenschaft1' | 'eigenschaft2' | 'eigenschaft3' | 'eigenschaft4' | 'eigenschaft5') => {
     const propertyLabel = t(`eigenschaften.${propertyKey}`); // Übersetzung für die Eigenschaft
     const propertyValue = card.eigenschaften[propertyKey];
-
-    console.log('Property Translation:', propertyKey, propertyLabel); // Überprüfe die Übersetzung für jede Eigenschaft
 
     return (
       <li

@@ -19,6 +19,4 @@ i18n
     },
   });
 
-console.log('i18n configuration loaded with base URL:', import.meta.env.BASE_URL); // Log-Ausgabe hinzufügen
-
 export default i18n;
