@@ -4,7 +4,7 @@ Dies ist die Dokumentation des `Card Battle` Projekts. Die Anwendung basiert auf
 
 ## Projektstruktur
 
-### `public/`
+### [`public/`](command:_github.copilot.openRelativePath?%5B%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2Fhome%2Flinux%2Fprojects%2FcardBattle%2Fpublic%2F%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%2C%22d49668a6-0fa3-4cdb-8b36-bef115440a95%22%5D "/home/linux/projects/cardBattle/public/")
 
 Dieser Ordner enthält alle statischen Assets, die direkt vom Server bereitgestellt werden und von der Anwendung referenziert werden können.
 
@@ -13,26 +13,45 @@ public
 ├── assets
 │   ├── data
 │   │   └── cards.json # JSON-Datei mit den Kartendaten für das Spiel.
+│   ├── icon # Enthält Icons für die Anwendung.
 │   └── images # Enthält alle Bilder für die Spielkarten.
 │       ├── 1.png
 │       ├── 2.png
-│       ├── ... (weitere Kartenbilder)
+│       ├── 3.png
+│       ├── 4.png
+│       ├── 5.png
+│       ├── 6.png
+│       ├── 7.png
+│       ├── 8.png
 │       └── backSite.png
+├── audio # Enthält Audiodateien für die Anwendung.
+│   └── WasIstGeldFuerDich.mp3
 └── locales # Sprachdateien für die Anwendung.
     ├── de
     │   └── cardText.json # Deutsche Übersetzungen für Kartentexte.
     └── en
         └── cardText.json # Englische Übersetzungen für Kartentexte.
+```
 
+### [`src/`](command:_github.copilot.openRelativePath?%5B%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2Fhome%2Flinux%2Fprojects%2FcardBattle%2Fsrc%2F%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%2C%22d49668a6-0fa3-4cdb-8b36-bef115440a95%22%5D "/home/linux/projects/cardBattle/src/")
 
+Dieser Ordner enthält den gesamten Quellcode der Anwendung.
+
+```bash
 src
 ├── App.tsx # Hauptkomponente der Anwendung, die die Spiellogik und Darstellung verwaltet.
 ├── components # UI-Komponenten der Anwendung.
+│   ├── BackgroundMusic.tsx # Komponente zur Steuerung der Hintergrundmusik.
 │   ├── CardComponent.tsx # Stellt eine einzelne Karte im Spiel dar.
 │   ├── ComputerArea.tsx # Verwaltet und zeigt den Spielbereich des Computers an.
+│   ├── EndAnimation.tsx # Zeigt die Endanimation des Spiels an.
+│   ├── InfoPopup.tsx # Zeigt ein Popup mit Informationen über den Entwickler an.
 │   ├── LanguageSwitcher.tsx # Ermöglicht dem Benutzer, die Sprache der Anwendung zu wechseln.
+│   ├── MusicButton.tsx # Button zum Ein- und Ausschalten der Musik.
 │   ├── PlayerArea.tsx # Verwaltet und zeigt den Spielbereich des Spielers an.
+│   ├── StartAnimation.tsx # Zeigt die Startanimation des Spiels an.
 │   └── WinnerMessage.tsx # Zeigt eine Nachricht an, wenn ein Gewinner feststeht.
+├── custom.d.ts # Typdeklarationen für benutzerdefinierte Elemente.
 ├── hooks # Benutzerdefinierte Hooks für die Zustandsverwaltung und andere Funktionen.
 │   ├── useGameInitialization.ts # Initialisiert das Spiel, mischt die Karten und verteilt sie.
 │   ├── useGameState.ts # Verwaltet den Zustand des Spiels, einschließlich aktueller Karten und Spielstände.
@@ -46,6 +65,8 @@ src
 │   │   ├── _animations.scss # Enthält Animationen und Keyframes für die Anwendung.
 │   │   ├── _button.scss # Stile für alle Buttons in der Anwendung.
 │   │   ├── _card.scss # Stile für die Kartenanzeige und -animationen.
+│   │   ├── _endAnimation.scss # Stile für die Endanimation.
+│   │   ├── _infoPopup.scss # Stile für das Info-Popup.
 │   │   ├── _navbar.scss # Stile für die Navigationsleiste.
 │   │   └── _winner-message.scss # Stile für die Gewinner-Nachricht.
 │   └── main.scss # Haupt-SCSS-Datei, die alle anderen SCSS-Dateien importiert und kompiliert.
@@ -59,3 +80,4 @@ src
 │   ├── selectHighestPropertyForComputer.ts # Algorithmus zur Auswahl der besten Eigenschaft für den Computer.
 │   └── shuffleArray.ts # Hilfsfunktion zum Mischen von Arrays.
 └── vite-env.d.ts # TypeScript-Deklarationsdatei für Vite-spezifische Umgebungsvariablen.
+```

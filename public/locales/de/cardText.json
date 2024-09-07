@@ -19,6 +19,18 @@
     "eigenschaft4": "Teilbarkeit",
     "eigenschaft5": "Transportfähigkeit"
   },
+  "info": {
+    "aboutMe": "Über mich",
+    "description": "Wenn Ihnen meine Arbeit gefällt, bin ich sehr dankbar für ein paar Bitcoin Lightning Sats. Schauen Sie sich auch meine GitHub-Repos an. Kontaktaufnahme über Nostr. Hilfe bei einem Projekt? Melden Sie sich gerne.",
+    "widgetName": "Gefällt Ihnen das Spiel?",
+    "widgetButtonText": "Danke für die Sats",
+    "closeButton": "Schließen",
+    "github": "Besuchen Sie mein GitHub-Repositorie",
+    "nostr": "Kontaktieren Sie mich über Nostr",
+    "githubLink": "https://github.com/Walpurga03?tab=repositories",
+    "nostrPubKey": "npub192jd2dxlqwfnemzz8hsk77z2rn4de3thelw6suvtvqsl79d0udysxzuswy",
+    "customizeMessage": "Sie können die Bilder und Texte von Card Battle einfach ändern."
+  },
   "cards": {
     "1": {
       "name": "Bitcoin",

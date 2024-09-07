@@ -1,14 +1,12 @@
-
 /* Info-Button */
 .info-button {
   position: fixed;
   top: 20px;
   right: 20px;
   z-index: 100; /* Stelle sicher, dass der Button über anderen Elementen liegt */
-  background-color: $primary-light-color;
   color: $secondary-color;
   border: none;
-  padding: 10px 20px;
+  padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -44,32 +42,31 @@
   max-width: 600px; /* Setzt eine maximale Breite */
   max-height: 80vh; /* Maximale Höhe des Popups, um sicherzustellen, dass es scrollbar ist */
   overflow-y: auto; /* Ermöglicht das Scrollen nach unten, falls der Inhalt die maximale Höhe überschreitet */
-  color: $secondary-color;
+  color: $text-color;
 }
 
-/* Properties-Info */
-.properties-info h2 {
+/* About Me */
+.about-me {
   color: $text-color;
-  font-size: 2em;
   margin-top: 20px;
 }
 
-.properties-info h3 {
-  color: $text-color;
-  margin: 0px;
+.about-me h2 {
+  font-size: 2em;
 }
 
-.properties-info ul {
-  list-style-type: none;
-  padding-left: 0;
-  margin: 0.2em 0 0.7em;
+.about-me a {
   color: $text-color;
+  text-decoration: none;
 
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
-.properties-info li {
-  text-align: left;
-  margin-left: 10px;
+.about-me img,
+.about-me svg {
+  vertical-align: middle;
 }
 
 /* Schließen-Button */
@@ -81,8 +78,8 @@
 }
 
 .schliesen-button .button {
-  background-color: $primary-color;
-  color: $secondary-color;
+  background-color: $primary-dark-color;
+  color: $text-color;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
@@ -90,6 +87,14 @@
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: $primary-dark-color;
+    background-color: $primary-light-color;
+    color: $secondary-color;
   }
 }
+
+
+
+
+
+
+
