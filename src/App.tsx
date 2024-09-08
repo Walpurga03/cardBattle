@@ -68,9 +68,13 @@ function App() {
   return (
     <div className="App">
       <nav className="navbar">
-        <LanguageSwitcher />
-        <MusicButton isPlaying={isPlaying} toggleMusic={() => setIsPlaying(!isPlaying)} />
-        <InfoPopup />
+        <div className="navbar-left">
+          <LanguageSwitcher className="navbar-button" />
+          <MusicButton className="navbar-button" isPlaying={isPlaying} toggleMusic={() => setIsPlaying(!isPlaying)} />
+        </div>
+        <div className="navbar-right">
+          <InfoPopup className="navbar-button" />
+        </div>
       </nav>
 
       <BackgroundMusic src={musicSrc} playing={isPlaying} /> {/* Füge die BackgroundMusic-Komponente hinzu */}

@@ -3,11 +3,12 @@ import React from 'react';
 interface MusicButtonProps {
   isPlaying: boolean;
   toggleMusic: () => void;
+  className?: string;
 }
 
-const MusicButton: React.FC<MusicButtonProps> = ({ isPlaying, toggleMusic }) => {
+const MusicButton: React.FC<MusicButtonProps> = ({ isPlaying, toggleMusic, className }) => {
   return (
-    <button onClick={toggleMusic} className="music-button">
+    <button className={className} onClick={toggleMusic}>
       {isPlaying ? 'Pause Music' : 'Play Music'}
     </button>
   );

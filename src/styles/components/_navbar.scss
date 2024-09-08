@@ -1,29 +1,40 @@
-// Navigation Styling
+// src/styles/components/navbar.scss
+
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   padding: 10px 20px;
   background-color: transparent;
   z-index: 1000;
 
-  .language-switcher {
+  .navbar-left {
     display: flex;
-    gap: $gap-small;
+    gap: 10px; /* Abstand zwischen den Buttons */
+  }
 
-    button {
-      background-color: $button-bg-color;
-      color: black;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 5px;
-      cursor: pointer;
+  .navbar-right {
+    display: flex;
+    gap: 10px; /* Abstand zwischen den Buttons */
+    position: absolute;
+    right: 100px; /* Abstand vom rechten Rand des Bildschirms */
+  }
 
-      &:hover {
-        background-color: $button-hover-bg-color;
-      }
+  .navbar-button {
+    margin: 10px 5px 0 0;
+    color: $secondary-color;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 100; /* Stelle sicher, dass der Button über anderen Elementen liegt */
+
+    &:hover {
+      background-color: $primary-dark-color;
+      color: $text-color;
     }
   }
 }

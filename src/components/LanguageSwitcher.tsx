@@ -1,6 +1,11 @@
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-const LanguageSwitcher = () => {
+interface LanguageSwitcherProps {
+  className?: string;
+}
+
+const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ className }) => {
   const { i18n } = useTranslation();
 
   const changeLanguage = (language: string) => {
@@ -9,8 +14,8 @@ const LanguageSwitcher = () => {
 
   return (
     <div>
-      <button onClick={() => changeLanguage('de')}>Deutsch</button>
-      <button onClick={() => changeLanguage('en')}>English</button>
+      <button className={className} onClick={() => changeLanguage('de')}>Deutsch</button>
+      <button className={className} onClick={() => changeLanguage('en')}>English</button>
     </div>
   );
 };

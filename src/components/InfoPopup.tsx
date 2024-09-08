@@ -1,8 +1,11 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import '../styles/main.scss';
 
-const InfoPopup = () => {
+interface InfoPopupProps {
+  className?: string;
+}
+
+const InfoPopup: React.FC<InfoPopupProps> = ({ className }) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const { t } = useTranslation();
 
@@ -18,7 +21,7 @@ const InfoPopup = () => {
 
   return (
     <>
-      <button className="button info-button" onClick={togglePopup}>Info</button>
+      <button className={className} onClick={togglePopup}>Info</button>
       {isPopupOpen && (
         <div className="popup-overlay">
           <div className="popup-content">

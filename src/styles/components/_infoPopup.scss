@@ -1,22 +1,3 @@
-/* Info-Button */
-.info-button {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 100; /* Stelle sicher, dass der Button über anderen Elementen liegt */
-  color: $secondary-color;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-
-  &:hover {
-    background-color: $primary-dark-color;
-    color: $text-color;
-  }
-}
-
 /* Popup-Overlay */
 .popup-overlay {
   position: fixed;
