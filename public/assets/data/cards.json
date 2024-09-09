@@ -13,7 +13,7 @@
   },
   {
     "id": 2,
-    "name": "Ethereum",
+    "name": "Ether",
     "image": "2.png",
     "eigenschaften": {
       "eigenschaft1": 2015,
@@ -21,6 +21,294 @@
       "eigenschaft3": 2,
       "eigenschaft4": 5,
       "eigenschaft5": 5
+    }
+  },
+  {
+    "id": 3,
+    "name": "Euro",
+    "image": "3.png",
+    "eigenschaften": {
+      "eigenschaft1": 2002,
+      "eigenschaft2": 1,
+      "eigenschaft3": 2,
+      "eigenschaft4": 4,
+      "eigenschaft5": 4
+    }
+  },
+  {
+    "id": 4,
+    "name": "Monero",
+    "image": "4.png",
+    "eigenschaften": {
+      "eigenschaft1": 2014,
+      "eigenschaft2": 2,
+      "eigenschaft3": 2,
+      "eigenschaft4": 5,
+      "eigenschaft5": 5
+    }
+  },
+  {
+    "id": 5,
+    "name": "Gold",
+    "image": "5.png",
+    "eigenschaften": {
+      "eigenschaft1": -6000,
+      "eigenschaft2": 4,
+      "eigenschaft3": 5,
+      "eigenschaft4": 3,
+      "eigenschaft5": 3
+    }
+  },
+  {
+    "id": 6,
+    "name": "Silber",
+    "image": "6.png",
+    "eigenschaften": {
+      "eigenschaft1": -5000,
+      "eigenschaft2": 3,
+      "eigenschaft3": 4,
+      "eigenschaft4": 3,
+      "eigenschaft5": 3
+    }
+  },
+  {
+    "id": 7,
+    "name": "Kupfer",
+    "image": "7.png",
+    "eigenschaften": {
+      "eigenschaft1": -8000,
+      "eigenschaft2": 2,
+      "eigenschaft3": 4,
+      "eigenschaft4": 3,
+      "eigenschaft5": 2
+    }
+  },
+  {
+    "id": 8,
+    "name": "Dollar",
+    "image": "8.png",
+    "eigenschaften": {
+      "eigenschaft1": 1785,
+      "eigenschaft2": 1,
+      "eigenschaft3": 3,
+      "eigenschaft4": 4,
+      "eigenschaft5": 4
+    }
+  },
+  {
+    "id": 9,
+    "name": "Yen",
+    "image": "9.png",
+    "eigenschaften": {
+      "eigenschaft1": 1870,
+      "eigenschaft2": 1,
+      "eigenschaft3": 3,
+      "eigenschaft4": 4,
+      "eigenschaft5": 4
+    }
+  },
+  {
+    "id": 10,
+    "name": "Wampum",
+    "image": "10.png",
+    "eigenschaften": {
+      "eigenschaft1": 1700,
+      "eigenschaft2": 2,
+      "eigenschaft3": 1,
+      "eigenschaft4": 2,
+      "eigenschaft5": 2
+    }
+  },
+  {
+    "id": 11,
+    "name": "Tabak",
+    "image": "11.png",
+    "eigenschaften": {
+      "eigenschaft1": 1619,
+      "eigenschaft2": 2,
+      "eigenschaft3": 1,
+      "eigenschaft4": 3,
+      "eigenschaft5": 2
+    }
+  },
+  {
+    "id": 12,
+    "name": "Zaehne",
+    "image": "12.png",
+    "eigenschaften": {
+      "eigenschaft1": -10000,
+      "eigenschaft2": 2,
+      "eigenschaft3": 2,
+      "eigenschaft4": 2,
+      "eigenschaft5": 2
+    }
+  },
+  {
+    "id": 13,
+    "name": "Salz",
+    "image": "13.png",
+    "eigenschaften": {
+      "eigenschaft1": -10000,
+      "eigenschaft2": 2,
+      "eigenschaft3": 2,
+      "eigenschaft4": 3,
+      "eigenschaft5": 2
+    }
+  },
+  {
+    "id": 14,
+    "name": "Renminbi",
+    "image": "14.png",
+    "eigenschaften": {
+      "eigenschaft1": 1948,
+      "eigenschaft2": 1,
+      "eigenschaft3": 2,
+      "eigenschaft4": 4,
+      "eigenschaft5": 4
+    }
+  },
+  {
+    "id": 15,
+    "name": "Reichsmark",
+    "image": "15.png",
+    "eigenschaften": {
+      "eigenschaft1": 1924,
+      "eigenschaft2": 1,
+      "eigenschaft3": 1,
+      "eigenschaft4": 3,
+      "eigenschaft5": 3
+    }
+  },
+  {
+    "id": 16,
+    "name": "Rai-Steine",
+    "image": "16.png",
+    "eigenschaften": {
+      "eigenschaft1": 1200,
+      "eigenschaft2": 3,
+      "eigenschaft3": 2,
+      "eigenschaft4": 1,
+      "eigenschaft5": 1
+    }
+  },
+  {
+    "id": 17,
+    "name": "Pfund",
+    "image": "17.png",
+    "eigenschaften": {
+      "eigenschaft1": 700,
+      "eigenschaft2": 1,
+      "eigenschaft3": 4,
+      "eigenschaft4": 4,
+      "eigenschaft5": 4
+    }
+  },
+  {
+    "id": 18,
+    "name": "Schmuck",
+    "image": "18.png",
+    "eigenschaften": {
+      "eigenschaft1": -2000,
+      "eigenschaft2": 4,
+      "eigenschaft3": 4,
+      "eigenschaft4": 2,
+      "eigenschaft5": 3
+    }
+  },
+  {
+    "id": 19,
+    "name": "Getreide",
+    "image": "19.png",
+    "eigenschaften": {
+      "eigenschaft1": -3000,
+      "eigenschaft2": 2,
+      "eigenschaft3": 1,
+      "eigenschaft4": 3,
+      "eigenschaft5": 2
+    }
+  },
+  {
+    "id": 20,
+    "name": "Perlen",
+    "image": "20.png",
+    "eigenschaften": {
+      "eigenschaft1": -2000,
+      "eigenschaft2": 3,
+      "eigenschaft3": 2,
+      "eigenschaft4": 2,
+      "eigenschaft5": 2
+    }
+  },
+  {
+    "id": 21,
+    "name": "Florin",
+    "image": "21.png",
+    "eigenschaften": {
+      "eigenschaft1": 1252,
+      "eigenschaft2": 4,
+      "eigenschaft3": 5,
+      "eigenschaft4": 3,
+      "eigenschaft5": 3
+    }
+  },
+  {
+    "id": 22,
+    "name": "Denar",
+    "image": "22.png",
+    "eigenschaften": {
+      "eigenschaft1": -200,
+      "eigenschaft2": 2,
+      "eigenschaft3": 1,
+      "eigenschaft4": 2,
+      "eigenschaft5": 3
+    }
+  },
+  {
+    "id": 23,
+    "name": "Vieh",
+    "image": "23.png",
+    "eigenschaften": {
+      "eigenschaft1": -10000,
+      "eigenschaft2": 2,
+      "eigenschaft3": 1,
+      "eigenschaft4": 1,
+      "eigenschaft5": 2
+    }
+  },
+  {
+    "id": 24,
+    "name": "Muscheln",
+    "image": "24.png",
+    "eigenschaften": {
+      "eigenschaft1": -2000,
+      "eigenschaft2": 2,
+      "eigenschaft3": 1,
+      "eigenschaft4": 2,
+      "eigenschaft5": 2
+    }
+  },
+  {
+    "id": 25,
+    "name": "Kakao",
+    "image": "25.png",
+    "eigenschaften": {
+      "eigenschaft1": -3000,
+      "eigenschaft2": 2,
+      "eigenschaft3": 1,
+      "eigenschaft4": 3,
+      "eigenschaft5": 2
+    }
+  },
+  {
+    "id": 26,
+    "name": "Aggry-Perlen",
+    "image": "26.png",
+    "eigenschaften": {
+      "eigenschaft1": -2000,
+      "eigenschaft2": 3,
+      "eigenschaft3": 2,
+      "eigenschaft4": 2,
+      "eigenschaft5": 2
     }
   }
 ]
