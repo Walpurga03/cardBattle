@@ -13,7 +13,7 @@
   "winMessage": "{{winner}} gewinnt diese Runde!",
   "orientationWarning": "Bitte drehen Sie Ihr Gerät ins Querformat, um die Anwendung zu verwenden.",
   "eigenschaften": {
-    "eigenschaft1": "time",
+    "eigenschaft1": "Zeit",
     "eigenschaft2": "knapp",
     "eigenschaft3": "Lang",
     "eigenschaft4": "Teil",
