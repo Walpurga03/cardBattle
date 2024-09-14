@@ -39,7 +39,6 @@ const useGameState = (
   }, [playerCards, computerCards]);
 
   useEffect(() => {
-    // Überprüfe das Spielende nur, wenn das Spiel initialisiert ist und es mindestens eine Karte gibt
     if ((playerCards.length > 0 || computerCards.length > 0) && !gameOver) {
       if (playerCards.length === 0) {
         setGameOver(true);
@@ -49,7 +48,7 @@ const useGameState = (
         setWinner('Player');
       }
     }
-  }, [playerCards, computerCards, gameOver]); // Überprüfe auch gameOver, um sicherzustellen, dass der Hook nicht erneut ausgeführt wird
+  }, [playerCards, computerCards, gameOver]);
 
   useEffect(() => {
     if (winner) {
@@ -98,7 +97,7 @@ const useGameState = (
           setIsComputerTurn(false);
           setAnimationDirection(null);
           setShowWinnerMessage(false);
-        }, 5000);
+        }, 2000);
       } else if (result.winner === 'Computer') {
         setWinner('Computer');
         setAnimationDirection('right');
@@ -111,7 +110,7 @@ const useGameState = (
           setAnimationDirection(null);
           setIsComputerTurn(true);
           setShowWinnerMessage(false);
-        }, 5000);
+        }, 2000);
       } else {
         setWinner('Tie');
         setAnimationDirection('up');
@@ -123,9 +122,12 @@ const useGameState = (
           setIsComputerCardFlipped(true);
           setAnimationDirection(null);
           setShowWinnerMessage(false);
-        }, 5000);
+          if (isComputerTurn) {
+            setIsComputerTurn(true);
+          }
+        }, 2000);
       }
-    }, 5000);
+    }, 3000);
   };
 
   const handleComputerTurn = () => {

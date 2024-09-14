@@ -8,9 +8,10 @@ interface CardComponentProps {
   onSelectProperty?: (property: 'eigenschaft1' | 'eigenschaft2' | 'eigenschaft3' | 'eigenschaft4' | 'eigenschaft5') => void;
   isComputer?: boolean;
   isFlipped?: boolean;
+  className?: string; // Füge die className Prop hinzu
 }
 
-const CardComponent: React.FC<CardComponentProps> = ({ cardId, onSelectProperty, isComputer, isFlipped }) => {
+const CardComponent: React.FC<CardComponentProps> = ({ cardId, onSelectProperty, isComputer, isFlipped, className }) => {
   const { t } = useTranslation(); // useTranslation Hook von i18next verwenden
 
   const cardKey = cardId.toString();
@@ -59,11 +60,11 @@ const CardComponent: React.FC<CardComponentProps> = ({ cardId, onSelectProperty,
 
   return (
     <motion.div
-      className="card-flip"
+      className={`card-flip ${className}`} // Füge die className hier hinzu
       initial={isFlipped ? 'hidden' : 'visible'}
       animate={isFlipped ? 'hidden' : 'visible'}
       variants={flipAnimation}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.1 }}
       style={{ transformStyle: 'preserve-3d', perspective: '1000px' }}
     >
       <div className="card card-front">
@@ -84,7 +85,7 @@ const CardComponent: React.FC<CardComponentProps> = ({ cardId, onSelectProperty,
         </ul>
         <p className="card-description">{cardKey ? t(`cards.${cardKey}.textinfo`) : 'Beschreibung nicht verfügbar'}</p> {/* Übersetzung für die Kartentextinfo */}
       </div>
-      <div className="card card-back">
+      <div className="card-back">
         <img
           src={`${import.meta.env.BASE_URL}assets/images/backSite.png`} // Pfad für die Rückseite der Karte
           alt="Card Back"

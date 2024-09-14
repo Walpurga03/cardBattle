@@ -11,7 +11,7 @@ import StartAnimation from './components/StartAnimation';
 import MusicButton from './components/MusicButton';
 import BackgroundMusic from './components/BackgroundMusic';
 import EndAnimation from './components/EndAnimation';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import './styles/main.scss';
 
@@ -44,6 +44,14 @@ function App() {
     handleComputerTurn,
   } = useGameState(playerCards, computerCards, setPlayerCards, setComputerCards);
 
+  useEffect(() => {
+    if (isComputerTurn) {
+      document.body.classList.add('computer-turn');
+    } else {
+      document.body.classList.remove('computer-turn');
+    }
+  }, [isComputerTurn]);
+
   if (!isAnimationComplete) {
     return <StartAnimation onAnimationEnd={() => setIsAnimationComplete(true)} />;
   }
@@ -57,7 +65,6 @@ function App() {
   }
 
   if (gameOver) {
-    console.log('Game over, rendering EndAnimation');
     return (
       <div className="App">
         <EndAnimation playerWon={winner === 'Player'} /> {/* Füge die EndAnimation-Komponente hinzu */}
@@ -98,11 +105,14 @@ function App() {
       <WinnerMessage
         winner={winner}
         showWinnerMessage={showWinnerMessage}
+        selectedProperty={lastRoundDetails.selectedProperty}
+        playerValue={lastRoundDetails.playerValue}
+        computerValue={lastRoundDetails.computerValue}
       />
 
       {isComputerTurn && (
         <button onClick={handleComputerTurn} className="button-highlight" style={{ marginTop: '20px' }}>
-          {t('computerTurnButton')}
+          {t('computerTurnButton', { computer: t('computer') })}
         </button>
       )}
 

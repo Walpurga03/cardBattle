@@ -135,6 +135,17 @@
   font-weight: bold;
 }
 
+.property-label,
+.property-value {
+  transition: color 0.3s, background-color 0.3s; // Füge eine Übergangsanimation hinzu
+}
+
+body:not(.computer-turn) .player-card .property-label:hover,
+body:not(.computer-turn) .player-card .property-value:hover {
+  background-color: $secondary-color;
+  color: $text-color; // Ändere die Farbe beim Hover
+}
+
 .rating-scale {
   flex: 1;
   height: 10px;
@@ -214,4 +225,3 @@
     font-size: 0.6em;
   }
 }
-

@@ -38,6 +38,7 @@ const PlayerArea: React.FC<PlayerAreaProps> = ({
           <CardComponent
             cardId={currentPlayerCard.id}
             onSelectProperty={!isComputerTurn ? handlePropertySelect : undefined}
+            className="player-card" // Füge die Klasse hier hinzu
           />
         </motion.div>
       ) : (
