@@ -20,6 +20,7 @@
 }
 
 .card-header {
+  font-size: 0.85em;
   position: absolute;
   background-color: $secondary-color;
   color: $text-color;
@@ -152,7 +153,6 @@ body:not(.computer-turn) .player-card .property-value:hover {
   background-color: #eee;
   border-radius: 5px;
   overflow: hidden;
-  margin-left: 10px;
   min-width: 100px;
   display: flex;
   justify-content: flex-end;
@@ -172,6 +172,8 @@ body:not(.computer-turn) .player-card .property-value:hover {
   line-height: 1.5;
   background-color: $secondary-color; // Hintergrundfarbe für die Beschreibung
   box-sizing: border-box;
+  text-align: left; // Setze den Text linksbündig
+  padding: 10px 20px; // Füge Innenabstand hinzu
 }
 .card-properties-list {
   list-style: none;
@@ -206,6 +208,21 @@ body:not(.computer-turn) .player-card .property-value:hover {
     font-size: 0.9em;
     margin: 5px 0; // Verringerter Abstand zwischen den Listenelementen für kleinere Bildschirme
   }
+  .card-header {
+    font-size: 0.75em;
+  }
+}
+
+@media (max-width: 900px) {
+  .card-description {
+    font-size: 0.7em; // Kleinere Schriftgröße für die Kartenbeschreibung
+  }
+  .card-properties-list li {
+    font-size: 0.7em;
+  }
+  .card-header {
+    font-size: 0.65em;
+  }
 }
 
 @media (max-width: 850px) {
@@ -215,13 +232,59 @@ body:not(.computer-turn) .player-card .property-value:hover {
   .card-properties-list li {
     font-size: 0.7em;
   }
+  .card-header {
+    font-size: 0.65em;
+  }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 750px) {
   .card-description {
     font-size: 0.6em; // Kleinere Schriftgröße für die Kartenbeschreibung
   }
   .card-properties-list li {
     font-size: 0.6em;
   }
+  .card-header {
+    font-size: 0.65em;
+  }
+}
+@media (max-width: 700px) {
+  .card-description {
+    font-size: 0.55em; // Kleinere Schriftgröße für die Kartenbeschreibung
+  }
+  .card-properties-list li {
+    font-size: 0.55em;
+  }
+  .card-header {
+    font-size: 0.65em;
+  }
+  .rating-scale {
+    height: 8px;
+  }
+}
+@media (max-width: 650px) {
+  .card-description {
+    font-size: 0.45em; // Kleinere Schriftgröße für die Kartenbeschreibung
+  }
+  .card-properties-list li {
+    font-size: 0.45em;
+  }
+  .card-header {
+    font-size: 0.55em;
+  }
+  .rating-scale {
+    height: 6px;
+  }
+}
+@media (max-width: 600px) {
+  .card-description {
+    font-size: 0.35em; // Kleinere Schriftgröße für die Kartenbeschreibung
+  }
+  .card-properties-list li {
+    font-size: 0.35em;
+  }
+  .rating-scale {
+    height: 5px;
+  }
+ 
 }
