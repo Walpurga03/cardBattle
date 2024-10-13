@@ -1,5 +1,5 @@
 {
-  "title": "Monay Wars",
+  "title": "Money Wars",
   "gameOver": "Game Over!",
   "playerWins": "{{winner}} won the game!",
   "noMoreCards": "No more cards",
@@ -10,7 +10,7 @@
   "computer": "Satoshi",
   "drawPile": "Draw Pile: {{count}} cards",
   "tieMessage": "It's a tie!",
-  "winMessage": "{{winner}} wins this round!",
+  "winMessage": "{{winner}} won this round!",
   "orientationWarning": "Please turn your device into landscape format to use the application.",
   "eigenschaften": {
     "eigenschaft1": "Since",
@@ -37,104 +37,104 @@
       "textinfo": "Bitcoin is the first decentralized network that allows the transfer of value without a central authority. The immutable supply cap of 21 Million bitcoin makes it the scarcest money in the world. The protocol is open-source, based on a blockchain and peer-to-peer."
     },
     "2": {
-      "name": "Ether",
+      "name": "Ethereum",
       "textinfo": "Ethereum is an open-source, distributed system which allows the creation, management, and execution of programs or contracts (smart contracts) in its own blockchain. One unit in the Ethereum Network is called one ether."
     },
     "3": {
       "name": "Euro",
-      "textinfo": "Der Euro ist die offizielle Währung der Europäischen Union. Er wird von 19 der 27 EU-Mitgliedstaaten sowie von mehreren Nichtmitgliedstaaten verwendet. Er wird mit EUR abgekürzt und durch das Symbol € dargestellt. Zudem ist der Euro die am zweithäufigsten gehandelte Währung der Welt."
+      "textinfo": "The euro is the official currency of the European Union. It is used by 19 of the 27 member states of the EU, as well as by several non-member countries. It's abbreviated as EUR and is represented by the symbol €. Furthermore, it is the second most traded currency in the world."
     },
     "4": {
       "name": "Monero",
-      "textinfo": "Monero ist eine dezentralisierte Kryptowährung. Sie verwendet ein öffentliches verteiltes Hauptbuch mit Technologien zur Verbesserung der Privatsphäre, die Transaktionen verschleiern, um Anonymität und Fungibilität zu erreichen."
+      "textinfo": "Monero is a decentralized cryptocurrency. It uses a public distributed ledger with privacy-enhancing technologies that obfuscate transactions to achieve anonymity and fungibility. However, the supply can't be verified because of this feature"
     },
     "5": {
       "name": "Gold",
-      "textinfo": "Gold ist ein Edelmetall, das seit Tausenden von Jahren als Geld verwendet wird. Es wird aufgrund seiner Seltenheit, Schönheit und Vielseitigkeit hoch geschätzt und hat bei der Entwicklung moderner Währungssysteme eine wichtige Rolle gespielt. Es ist zudem korrosionsbeständig und färbt nicht ab."
+      "textinfo": "Gold is a precious metal that has been used as a form of money for thousands of years. It is highly valued due to its rarity, beauty, and versatility, and it has played a significant role in the development of modern currency systems. It is resistant to corrosion and does not tarnish."
     },
     "6": {
-      "name": "Silber",
-      "textinfo": "Silber ist ein Metall, das schon seit Jahrtausenden als Zahlungsmittel verwendet wird. Es ist weniger wertvoll als Gold, wird aber aufgrund seiner Seltenheit und Schönheit dennoch sehr geschätzt. Silber wurde im Laufe der Geschichte in vielen Gesellschaften zur Herstellung von Münzen und anderen Zahlungsmitteln verwendet."
+      "name": "Silver",
+      "textinfo": "Silver is a metal that has been used as a form of currency for centuries. It is less valuable than gold, but it is still highly prized due to its rarity and beauty. Silver has been used in the production of coins and other forms of currency in many societies throughout history."
     },
     "7": {
-      "name": "Kupfer",
-      "textinfo": "Kupfer wurde im Laufe der Geschichte immer wieder als Zahlungsmittel verwendet, bereits von alten Zivilisationen wie den Ägyptern und Römern. Seine Langlebigkeit und Knappheit machten es zu einem wertvollen Material für Münzen und andere Zahlungsmittel. Heutzutage findet Kupfer vor allem in der Industrie Verwendung"
+      "name": "Copper",
+      "textinfo": "Copper has been used as a form of money throughout history, dating back to ancient civilizations such as the Egyptians and Romans. Its durability and scarcity made it a valuable material for coins and other forms of currency. Today, copper is primarily used in industrial applications."
     },
     "8": {
-      "name": "Dollar",
-      "textinfo": "Der US-Dollar (USD) ist die offizielle Währung der Vereinigten Staaten von Amerika und gilt als die wichtigste Reservewährung der Welt. Die Ausgabe des US-Dollars erfolgt durch die Federal Reserve, die Zentralbank der Vereinigten Staaten."
+      "name": "United States dollar",
+      "textinfo": "The U.S. dollar (USD) is the official currency of the United States of America and is the world's primary reserve currency. The U.S. dollar is issued by the Federal Reserve, the central bank of the United States."
     },
     "9": {
-      "name": "Yen",
-      "textinfo": "Der japanische Yen (JPY, ¥) ist die offizielle Währung Japans und wird von der Bank von Japan ausgegeben. Er ist nach dem US-Dollar und dem Euro die am dritthäufigsten gehandelte Währung auf dem Devisenmarkt."
+      "name": "Japanese yen",
+      "textinfo": "The Japanese yen (JPY, ¥), is the official currency of Japan and is issued by the Bank of Japan. It is the third most traded currency in the foreign exchange market, after the United States dollar and the euro."
     },
     "10": {
       "name": "Wampum",
-      "textinfo": "Wampum war eine von den Indianerstämmen Nordamerikas verwendete Währung, die aus Muscheln hergestellt wurde. Es diente dem Handel, Gewerbe und zeremoniellen Zwecken und wurde aufgrund seiner Seltenheit und Qualität geschätzt. Obwohl es schließlich durch die europäische Währung ersetzt wurde, behält es nach wie vor eine wichtige Bedeutung in der Kultur der amerikanischen Ureinwohner."
+      "textinfo": "Wampum was a form of currency used by Native American tribes in North America made from shells. It was used for trade, commerce, and ceremonial purposes, and valued for its rarity and quality. It was eventually replaced by European currency but remains significant in Native American culture."
     },
     "11": {
-      "name": "Tabak",
-      "textinfo": "Natürliches Geld aus Tabak war in Amerika, Afrika, Indonesien und Melanesien ein gängiges Tauschmittel. Zigarettengeld entsteht oft in Zeiten, in denen traditionelle Währungen zusammenbrechen, wie es beispielsweise während der Hyperinflation in der Weimarer Republik der Fall war."
+      "name": "Tabacco",
+      "textinfo": "Natural money made out of tobacco was an established medium of exchange in some parts of the world (America, Africa, Indonesia, Melanesia). Cigarette money will often appear when the current money is broken (e.g., hyperinflation during the Weimar Republic). To this day, cigarettes are being used as money in prisons."
     },
     "12": {
-      "name": "Zaehne",
-      "textinfo": "Diese Form des Geldes wurde aus den Zähnen von Säugetieren hergestellt und fand Verwendung in verschiedenen Teilen Amerikas, auf Neuguinea, den Fidschi-Inseln, den Salomon-Inseln, den Gilbert-Inseln und anderen Inseln des Südpazifiks .. Aufgrund ihrer Seltenheit bzw. der Schwierigkeit, sie zu beschaffen, waren sie als Zahlungsmittel geeignet."
+      "name": "Teeth",
+      "textinfo": "This form of money was made out of the teeth from mammals. The teeth were used in different parts of America, New Guinea, the Fiji Islands, the Solomon Islands, the Gilbert Islands and other islands of the South Pacific. Their rarity, or difficulty of obtaining them, made them suitable as money."
     },
     "13": {
-      "name": "Salz",
-      "textinfo": "Salzbarren, die sogenannten Amole, wurden in Äthiopien seit dem Altertum als Zahlungsmittel verwendet. Sie wurden als Ware verwendet und hatten gleichzeitig einen Geldwert. Auf einigen lokalen Märkten Afrikas und Äthiopiens sind sie noch heute in Gebrauch."
+      "name": "Salt bars (Amole)",
+      "textinfo": "Salt bars, the so-called amoles, were used as means of payment in Ethiopia since ancient times. They were used as a good and at the same time they had monetary value. In some local marketplaces, they're still in use today."
     },
     "14": {
-      "name": "Renminbi",
-      "textinfo": "Der chinesische Renminbi (CNY, ¥), auch bekannt als chinesischer Yuan, ist die offizielle Währung der Volksrepublik China und wird von der People's Bank of China, der Zentralbank des Landes, ausgegeben."
+      "name": "Chinese renminbi",
+      "textinfo": "The Chinese renminbi (CNY, ¥), also known as the Chinese yuan, is the official currency of the People's Republic of China and is issued by the People's Bank of China, the country's central bank."
     },
     "15": {
       "name": "Reichsmark",
-      "textinfo": "Die Reichsmark war von 1924 bis 1948 gesetzliches Zahlungsmittel im Deutschen Reich. Herausgegeben von der Reichsbank, der Zentralbank Deutschlands, ersetzte sie die Papiermark, die in den frühen 1920er Jahren erheblich an Wert verloren hatte."
+      "textinfo": "The Reichsmark was legal tender in the German Reich from 1924 to 1948. It was issued by the Reichsbank, the central bank of Germany, and replaced the Papiermark, which had suffered significant depreciation during the early 1920s."
     },
     "16": {
-      "name": "Rai-Steine",
-      "textinfo": "Rai-Steine sind große, runde Steinscheiben, die auf der Insel Yap im Pazifischen Ozean als Zahlungsmittel verwendet wurden. Sie wurden aus einer Art von Kalkstein hergestellt, der nur auf der Insel Palau vorkommt, die über 800 km von Yap entfernt liegt. Die Steine wurden in Steinbrüchen abgebaut und zu Scheiben unterschiedlicher Größe gehauen."
+      "name": "Rai stones",
+      "textinfo": "Rai stones are large, circular stone disks that were used as a form of money on the island of Yap in the Pacific Ocean. They were made of a type of limestone found only on the island of Palau, which is located over 800 km away from Yap. The stones were quarried and carved into disks of various sizes."
     },
     "17": {
-      "name": "Pfund",
-      "textinfo": "Das britische Pfund (GBP) ist die offizielle Währung des Vereinigten Königreichs und neun seiner angeschlossenen Territorien. Mit einem Alter von 1200 Jahren ist das Pfund Sterling die älteste Währung, die heute noch in Gebrauch ist. Das Pfund ist international anerkannt und spielt eine bedeutende Rolle im globalen Finanzwesen."
+      "name": "British pound",
+      "textinfo": "The British pound (GBP) is the official currency of the United Kingdom and nine of its associated territories. 1200 years old, the pound sterling is the oldest currency that is still in use today. It's considered a reserve currency as it is widely used in international trade."
     },
     "18": {
-      "name": "Schmuck",
-      "textinfo": "In den alten Zivilisationen wurden Edelmetalle wie Gold und Silber zu Schmuckstücken wie Ringen, Armbändern und Halsketten verarbeitet, die anschließend zum Erwerb von Waren und Dienstleistungen genutzt wurden. Schmuck hat als Geldform verschiedene Vorteile, darunter seinen subjektiven Wert, seine Langlebigkeit und seine Tragbarkeit."
+      "name": "Jewlery",
+      "textinfo": "In ancient civilizations, precious metals such as gold and silver were fashioned into decorative items such as rings, bracelets, and necklaces, which were then used to buy goods and services. Jewelry has various advantages as a form of money, including its subjective value, durability, and portability."
     },
     "19": {
-      "name": "Getreide",
-      "textinfo": "In den alten Zivilisationen war Getreide aufgrund seiner Rolle als Grundnahrungsmittel und seines relativ stabilen Wertes eine wertvolle Ware. Es wurde üblicherweise in großen Getreidespeichern gelagert und diente im Handel als Zahlungsmittel. Getreide konnte gegen andere Waren und Dienstleistungen eingetauscht oder zur Begleichung von Steuern oder Schulden verwendet werden."
+      "name": "Grain",
+      "textinfo": "In ancient civilizations, grain was a valuable commodity due to its role as a staple food and its relatively stable value. It was typically stored in large granaries and used as a form of currency in trade. Grain could be traded for other goods and services, or it could be used to pay taxes or debts."
     },
     "20": {
-      "name": "Perlen",
-      "textinfo": "Aggry-Perlen sind eine Art verzierter Glasperlen aus Ghana, die von den Westafrikanern als Schmuck für Halsketten, Armbänder und andere Schmuckstücke verwendet wurden. Die Perlen wurden im afrikanischen Handel als Tausch- und Zahlungsmittel verwendet."
+      "name": "Glass beads",
+      "textinfo": "Glass beads are small, decorative objects that are made from glass and are often used in jewelry or other decorative items. They have a long history and have been used for decorative and cultural purposes in many societies around the world."
     },
     "21": {
       "name": "Florin",
-      "textinfo": "Der Florin ist eine historische Goldmünze, die in großen Teilen Europas verwendet wurde. Aufgrund ihres Goldgehalts war sie eine sehr geschätzte Münze. Die Münze wurde im Mittelalter in Florenz geprägt und wog etwa 3,5 Gramm."
+      "textinfo": "The florin is a historical gold coin that was used in large parts of Europe. It was a highly prized coin due to its gold content. The coin was minted in the Middle Ages in Florence and weighed about 3.5 grams."
     },
     "22": {
-      "name": "Denar",
-      "textinfo": "Der Denar war eine antike römische Münze, die im gesamten Römischen Reich weit verbreitet war. Er bestand aus Silber und wurde häufig im Handel und bei anderen finanziellen Transaktionen verwendet. Er war eine wichtige Währung in der antiken Welt und wurde weithin als Tauschmittel akzeptiert."
+      "name": "Denarius",
+      "textinfo": "The denarius was an ancient Roman coin that was widely used throughout the Roman Empire. It was made of silver and was commonly used in trade and other financial transactions. It was an important currency in the ancient world and was widely accepted as a medium of exchange."
     },
     "23": {
-      "name": "Vieh",
-      "textinfo": "Natürliches Geld. “Pecunia” bedeutet auf Lateinisch Geld. Sein Ursprung “pecus” (Vieh) weist auf seine sehr lange Verwendung als Wertmaßstab hin. Es diente zur Entlohnung von Dienstleistungen, zur Begleichung von Schulden, Steuern, Bußgeldern und als Schlacht- oder Siegespreis."
+      "name": "Cattle",
+      "textinfo": "“Pecunia” means money in Latin. Its origin “pecus” (cattle) points to its very long use as a measure for value. It was used to remunerate services, to pay debt, taxes, fines and as a battle or victory prize."
     },
     "24": {
-      "name": "Muscheln",
-      "textinfo": "Kaurimuscheln wurden in vielen Teilen der Welt wegen ihrer Schönheit und Seltenheit als Zahlungsmittel verwendet, wurden aber nach und nach durch standardisierte Währungen ersetzt. Heute werden sie zu Dekorations- und Sammelzwecken verwendet."
+      "name": "Cowery",
+      "textinfo": "Cowry shells were used as currency in many parts of the world for their beauty and rarity, but were gradually replaced by standardized currency. Today, they are used for decoration and collecting."
     },
     "25": {
-      "name": "Kakao",
-      "textinfo": "Kakaobohnen waren in den alten mesoamerikanischen Zivilisationen wie den Maya und den Azteken als Zahlungsmittel weit verbreitet. Kakaobohnen galten aufgrund ihrer Seltenheit und der Schwierigkeit, sie zu beschaffen, als wertvoll und wurden häufig im Tausch gegen andere Waren und Dienstleistungen verwendet."
+      "name": "Cacao",
+      "textinfo": "Cacao beans were widely used as a form of currency in ancient Mesoamerican civilizations such as the Maya and the Aztecs. Cacao beans were considered valuable due to their rarity and the difficulty of obtaining them, and they were often used in trade for other goods and services."
     },
     "26": {
-      "name": "Aggry-Perlen",
-      "textinfo": "Aggry-Perlen sind eine Art verzierter Glasperlen aus Ghana, die von den Westafrikanern als Schmuck für Halsketten, Armbänder und andere Schmuckstücke verwendet wurden. Die Perlen wurden im afrikanischen Handel als Tausch- und Zahlungsmittel verwendet."
+      "name": "Aggry beads",
+      "textinfo": "Aggry beads are a type of decorated glass bead from Ghana, used by West Africans as ornaments in necklaces, bracelets and other jewelry. Beads were used for exchange and as a means of payment during trade in Africa."
     }
   }
 }

@@ -133,7 +133,7 @@
   },
   {
     "id": 12,
-    "name": "Zaehne",
+    "name": "Zähne",
     "image": "12.png",
     "eigenschaften": {
       "eigenschaft1": -10000,
@@ -196,7 +196,7 @@
     "name": "Pfund",
     "image": "17.png",
     "eigenschaften": {
-      "eigenschaft1": 700,
+      "eigenschaft1": 800,
       "eigenschaft2": 1,
       "eigenschaft3": 4,
       "eigenschaft4": 4,
@@ -232,8 +232,8 @@
     "name": "Perlen",
     "image": "20.png",
     "eigenschaften": {
-      "eigenschaft1": -2000,
-      "eigenschaft2": 3,
+      "eigenschaft1": -2500,
+      "eigenschaft2": 2,
       "eigenschaft3": 2,
       "eigenschaft4": 2,
       "eigenschaft5": 2
@@ -304,7 +304,7 @@
     "name": "Aggry-Perlen",
     "image": "26.png",
     "eigenschaften": {
-      "eigenschaft1": -2000,
+      "eigenschaft1": 2000,
       "eigenschaft2": 3,
       "eigenschaft3": 2,
       "eigenschaft4": 2,
