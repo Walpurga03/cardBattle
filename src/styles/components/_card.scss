@@ -147,6 +147,11 @@ body:not(.computer-turn) .player-card .property-value:hover {
   color: $text-color; // Ändere die Farbe beim Hover
 }
 
+body:not(.computer-turn) .player-card .property-label:focus,
+body:not(.computer-turn) .player-card .property-value:focus {
+  outline: none; // Entferne den Fokusrahmen
+}
+
 .rating-scale {
   flex: 1;
   height: 10px;
@@ -223,6 +228,12 @@ body:not(.computer-turn) .player-card .property-value:hover {
   .card-header {
     font-size: 0.65em;
   }
+
+  // Deaktiviere Klick- und Fokus-Effekte für Bildschirme mit einer Breite von maximal 900px
+  .property-label,
+  .property-value {
+    pointer-events: none; // Deaktiviert alle Mausereignisse
+  }
 }
 
 @media (max-width: 850px) {
@@ -286,5 +297,4 @@ body:not(.computer-turn) .player-card .property-value:hover {
   .rating-scale {
     height: 5px;
   }
- 
 }
