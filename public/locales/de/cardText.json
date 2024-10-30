@@ -19,6 +19,8 @@
     "eigenschaft4": "Teilbarkeit",
     "eigenschaft5": "Transportfähigkeit"
   },
+  "showDescription": "Beschreibung anzeigen",
+  "close": "Schließen",
   "info": {
     "aboutMe": "Über mich",
     "description": "Wenn Ihnen meine Arbeit gefällt, bin ich sehr dankbar für ein paar Bitcoin Lightning Sats. Schauen Sie sich auch meine GitHub-Repos an. Kontaktaufnahme über Nostr. Hilfe bei einem Projekt? Melden Sie sich gerne.",
