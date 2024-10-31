@@ -12,6 +12,8 @@ import MusicButton from './components/MusicButton';
 import BackgroundMusic from './components/BackgroundMusic';
 import EndAnimation from './components/EndAnimation';
 import { useState, useEffect } from 'react';
+import Navbar from './components/Navbar';
+
 
 import './styles/main.scss';
 
@@ -74,15 +76,10 @@ function App() {
 
   return (
     <div className="App">
-      <nav className="navbar">
-        <div className="navbar-left">
-          <LanguageSwitcher className="navbar-button" />
-          <MusicButton className="navbar-button" isPlaying={isPlaying} toggleMusic={() => setIsPlaying(!isPlaying)} />
-        </div>
-        <div className="navbar-right">
-          <InfoPopup className="navbar-button" />
-        </div>
-      </nav>
+      <Navbar 
+        isPlaying={isPlaying} 
+        toggleMusic={() => setIsPlaying(!isPlaying)} 
+      />
 
       <BackgroundMusic src={musicSrc} playing={isPlaying} /> {/* Füge die BackgroundMusic-Komponente hinzu */}
 

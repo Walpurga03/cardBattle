@@ -1,12 +1,11 @@
-// Karten Styling
 .battlefield {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   gap: 40px;
   padding-top: 60px;
-  overflow: hidden; // Verhindert das Ausdehnen des Containers durch die Kartenanimation
-  position: relative; // Stellt sicher, dass der Container der Bezugspunkt für die Animationen bleibt
+  overflow: hidden;
+  position: relative;
 }
 
 .card-container {
@@ -196,117 +195,6 @@ body:not(.computer-turn) .player-card .property-value:focus {
   }
 }
 
-@media (max-width: 1100px) {
-  .card-description {
-    font-size: 0.9em; // Kleinere Schriftgröße für die Kartenbeschreibung
-  }
-
-  .card-front img {
-    width: 100%; // Verkleinert das Bild auf der Vorderseite
-    margin: 0 auto; // Zentriert das Bild auf der Vorderseite
-  }
-}
-
-@media (max-width: 950px) {
-  .card-properties-list li {
-    line-height: 0.5;
-    font-size: 0.9em;
-    margin: 5px 0; // Verringerter Abstand zwischen den Listenelementen für kleinere Bildschirme
-  }
-  .card-header {
-    font-size: 0.75em;
-  }
-}
-
-@media (max-width: 900px) {
-  .card-description {
-    font-size: 0.7em; // Kleinere Schriftgröße für die Kartenbeschreibung
-  }
-  .card-properties-list li {
-    font-size: 0.7em;
-  }
-  .card-header {
-    font-size: 0.65em;
-  }
-
-  // Deaktiviere Klick- und Fokus-Effekte für Bildschirme mit einer Breite von maximal 900px
-  .property-label,
-  .property-value {
-    pointer-events: none; // Deaktiviert alle Mausereignisse
-  }
-}
-
-@media (max-width: 850px) {
-  .card-description {
-    font-size: 0.7em; // Kleinere Schriftgröße für die Kartenbeschreibung
-  }
-  .card-properties-list li {
-    font-size: 0.7em;
-  }
-  .card-header {
-    font-size: 0.65em;
-  }
-}
-
-@media (max-width: 750px) {
-  .card-description {
-    font-size: 0.6em; // Kleinere Schriftgröße für die Kartenbeschreibung
-  }
-  .card-properties-list li {
-    font-size: 0.6em;
-  }
-  .card-header {
-    font-size: 0.65em;
-  }
-  .card-front {
-    padding: 8px;
-    border: 0.4em solid #444444;
-  }
-}
-@media (max-width: 700px) {
-  .card-description {
-    font-size: 0.55em; // Kleinere Schriftgröße für die Kartenbeschreibung
-  }
-  .card-properties-list li {
-    font-size: 0.55em;
-  }
-  .card-header {
-    font-size: 0.65em;
-  }
-  .rating-scale {
-    height: 8px;
-  }
-}
-@media (max-width: 650px) {
-  .card-description {
-    font-size: 0.45em; // Kleinere Schriftgröße für die Kartenbeschreibung
-  }
-  .card-properties-list li {
-    font-size: 0.45em;
-  }
-  .card-header {
-    font-size: 0.55em;
-  }
-  .rating-scale {
-    height: 6px;
-  }
-}
-@media (max-width: 600px) {
-  .card-description {
-    font-size: 0.35em; // Kleinere Schriftgröße für die Kartenbeschreibung
-  }
-  .card-properties-list li {
-    font-size: 0.35em;
-  }
-  .rating-scale {
-    height: 5px;
-  }
-  .card-front {
-    padding: 4px;
-    border: 0.4em solid #444444;
-  }
-}
-
 // Bestehende Styles beibehalten und neue Styles hinzufügen
 
 .description-button {
@@ -378,32 +266,140 @@ body:not(.computer-turn) .player-card .property-value:focus {
   }
 }
 
-@media (max-width: 900px) {
-  .description-popup {
-    width: 95%;
-    padding: 15px;
-    
-    h3 {
-      font-size: 1.1em;
-    }
+@media (max-width: 1200px) {
+  .card-container {
+    max-width: 500px;
+  }
+
+  .card-description {
+    font-size: 0.95em;
+  }
+
+  .card-properties-list li {
+    margin: 8px 0;
+  }
+
+  .card-header {
+    font-size: 0.9em;
   }
 }
 
-@media (max-width: 600px) {
+// Medium (Tablet): 768px - 991px
+@media (max-width: 991px) {
+  .battlefield {
+    padding-top: 0px;
+  }
+  .card-container {
+    max-width: 450px;
+    font-size: 0.7em;
+  }
+  .card-spieler, .card-computer{
+    width: 60%;
+  }
+
+  .card-description {
+    font-size: 0.85em;
+  }
+
+  .card-properties-list li {
+    font-size: 0.85em;
+    margin: 6px 0;
+  }
+
+  .card-header {
+    font-size: 0.8em;
+  }
+ƒ
+  .rating-scale {
+    height: 8px;
+  }
+
+  .card-front {
+    padding: 15px;
+    border: 0.6em solid $secondary-color;
+  }
+}
+
+// Small (Tablet Portrait): 576px - 767px
+@media (max-width: 767px) {
+  .card-container {
+    max-width: 400px;
+  }
+
+  .card-description {
+    font-size: 0.75em;
+  }
+
+  .card-properties-list li {
+    font-size: 0.75em;
+    margin: 5px 0;
+  }
+
+  .card-header {
+    font-size: 0.7em;
+  }
+
+  .rating-scale {
+    height: 6px;
+  }
+
+  .card-front {
+    padding: 12px;
+    border: 0.5em solid $secondary-color;
+  }
+
+  // Deaktiviere Hover-Effekte für Touch-Geräte
+  .property-label,
+  .property-value {
+    pointer-events: none;
+  }
+}
+
+// Extra Small (Mobile Landscape): < 576px
+@media (max-width: 575px) {
+  .card-container {
+    max-width: 350px;
+  }
+
+  .card-description {
+    font-size: 0.65em;
+  }
+
+  .card-properties-list li {
+    font-size: 0.65em;
+    margin: 4px 0;
+  }
+
+  .card-header {
+    font-size: 0.6em;
+  }
+
+  .rating-scale {
+    height: 5px;
+  }
+
+  .card-front {
+    padding: 8px;
+    border: 0.4em solid $secondary-color;
+  }
+
+  // Optimierungen für sehr kleine Bildschirme
   .description-button {
-    font-size: 0.9em;
-    padding: 8px 15px;
+    font-size: 0.8em;
+    padding: 6px 12px;
   }
 
   .description-popup {
+    width: 95%;
     padding: 10px;
     
     h3 {
-      font-size: 1em;
+      font-size: 0.9em;
+      margin-bottom: 10px;
     }
     
     p {
-      font-size: 0.9em;
+      font-size: 0.8em;
     }
   }
 }

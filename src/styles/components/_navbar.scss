@@ -1,4 +1,18 @@
-// src/styles/components/navbar.scss
+// Blur Overlay
+.navbar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
 
 .navbar {
   position: fixed;
@@ -9,17 +23,19 @@
   padding: 10px 20px;
   background-color: transparent;
   z-index: 1000;
+  transition: all 0.3s ease;
 
   .navbar-left {
     display: flex;
-    gap: 10px; /* Abstand zwischen den Buttons */
+    gap: 10px;
+    margin-top: 0px;
   }
 
   .navbar-right {
     display: flex;
-    gap: 10px; /* Abstand zwischen den Buttons */
+    gap: 10px;
     position: absolute;
-    right: 100px; /* Abstand vom rechten Rand des Bildschirms */
+    right: 100px;
   }
 
   .navbar-button {
@@ -30,11 +46,87 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
-    z-index: 100; /* Stelle sicher, dass der Button über anderen Elementen liegt */
+    z-index: 100;
 
     &:hover {
       background-color: $primary-dark-color;
       color: $text-color;
+    }
+  }
+
+  // Toggle Button für Mobile
+  .navbar-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: $text-color;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+    margin: 0;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50px; // Neue Position
+    z-index: 1001;
+  }
+}
+
+// Mobile Styles (< 992px)
+@media (max-width: 991px) {
+  .navbar {
+    &.mobile {
+      width: 60px;
+      height: 100vh;
+      flex-direction: column;
+      background-color: transparent;
+      padding: 20px 10px;
+      align-items: center;
+      left: 50%;
+      transform: translateX(-50%);
+
+      .navbar-toggle {
+        display: block;
+      }
+
+      .navbar-left,
+      .navbar-right {
+        flex-direction: column;
+        align-items: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        margin-top: 100px; // Abstand nach dem Burger-Menü
+      }
+
+      // Neuanordnung der Buttons
+      .navbar-right {
+        position: static;
+        margin-top: 10px; // Geringerer Abstand zwischen den Button-Gruppen
+      }
+
+      &.expanded {
+        width: 80%;
+        background-color: transparent; // Transparenter Hintergrund
+
+        .navbar-left,
+        .navbar-right {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        & + .navbar-overlay {
+          display: block;
+          opacity: 1;
+        }
+
+        // Verbesserte Button-Anordnung im expandierten Zustand
+        .navbar-button {
+          width: 80%; // Breitere Buttons für bessere Klickbarkeit
+          text-align: center;
+          margin: 5px 0;
+        }
+      }
     }
   }
 }

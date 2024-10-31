@@ -1,3 +1,5 @@
+// src/styles/components/_infoPopup.scss
+
 /* Popup-Overlay */
 .popup-overlay {
   position: fixed;
@@ -7,75 +9,82 @@
   bottom: 0;
   display: flex;
   justify-content: center;
-  align-items: start; /* Ändert die vertikale Ausrichtung, damit das Popup oben beginnt */
-  padding-top: 10vh; /* Fügt oben einen Abstand ein, für bessere Sichtbarkeit */
-  background-color: rgba(0, 0, 0, 0.8); /* Halbtransparentes Schwarz */
+  align-items: start;
+  padding-top: 5vh; // Reduzierter oberer Abstand
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 101;
 }
 
 /* Popup-Content */
 .popup-content {
   background-color: $primary-color;
-  padding: 20px;
+  padding: 30px;
   border-radius: 5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 80%; /* Setzt die Breite auf 80% des Viewports */
-  max-width: 600px; /* Setzt eine maximale Breite */
-  max-height: 80vh; /* Maximale Höhe des Popups, um sicherzustellen, dass es scrollbar ist */
-  overflow-y: auto; /* Ermöglicht das Scrollen nach unten, falls der Inhalt die maximale Höhe überschreitet */
+  width: 90%; // Erhöhte Breite
+  max-width: 1200px; // Erhöhte maximale Breite
+  max-height: 90vh;
+  overflow-y: auto;
   color: $text-color;
+  
+  @media (max-width: 991px) {
+    width: 95%;
+    padding: 20px;
+  }
 }
 
 /* About Me */
 .about-me {
   color: $text-color;
   margin-top: 20px;
-}
-
-.about-me h2 {
-  font-size: 2em;
-}
-
-.about-me a {
-  color: $text-color;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
+  
+  h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
   }
-}
+  
+  p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 1.5em;
+  }
 
-.about-me img,
-.about-me svg {
-  vertical-align: middle;
+  a {
+    color: $text-color;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  }
 }
 
 /* Schließen-Button */
 .schliesen-button {
   margin-top: 2em;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   display: flex;
   justify-content: center;
-}
 
-.schliesen-button .button {
-  background-color: $primary-dark-color;
-  color: $text-color;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+  .button {
+    background-color: $primary-dark-color;
+    color: $text-color;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1.1em;
 
-  &:hover {
-    background-color: $primary-light-color;
-    color: $secondary-color;
+    &:hover {
+      background-color: $primary-light-color;
+      color: $secondary-color;
+    }
   }
 }
-
-
-
-
-
-
-
