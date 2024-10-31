@@ -329,39 +329,12 @@ body:not(.computer-turn) .player-card .property-value:focus {
 
 // Small (Tablet Portrait): 700px - 800px
 @media (max-width: 800px) {
+
+  .card-spieler, .card-computer{
+    width: 62%;
+  }
   .card-container {
     font-size: 0.5em;
-  }
-  .card-spieler, .card-computer{
-    width: 50%;
-  }
-
-  .card-description {
-    font-size: 0.75em;
-  }
-
-  .card-properties-list li {
-    font-size: 0.75em;
-    margin: 5px 0;
-  }
-
-  .card-header {
-    font-size: 0.7em;
-  }
-
-  .rating-scale {
-    height: 6px;
-  }
-
-  .card-front {
-    padding: 12px;
-    border: 0.5em solid $secondary-color;
-  }
-
-  // Deaktiviere Hover-Effekte für Touch-Geräte
-  .property-label,
-  .property-value {
-    pointer-events: none;
   }
 }
 
@@ -369,10 +342,10 @@ body:not(.computer-turn) .player-card .property-value:focus {
 @media (max-width: 700px) {
   .card-container {
     max-width: 350px;
-    font-size: 0.4em;
+    font-size: 0.7em;
   }
   .card-spieler, .card-computer{
-    width: 40%;
+    width: 70%;
   }
 
   .card-description {

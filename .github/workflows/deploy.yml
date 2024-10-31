@@ -47,3 +47,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+
+      - name: Trigger Laravel Forge Deploy
+        run: curl "https://forge.laravel.com/servers/659100/sites/2404242/deploy/http?token=${{ secrets.FORGE_DEPLOY_TOKEN }}"
