@@ -284,21 +284,22 @@ body:not(.computer-turn) .player-card .property-value:focus {
   }
 }
 
-// Medium (Tablet): 768px - 991px
+// Medium (Tablet): 800px - 991px
 @media (max-width: 991px) {
   .battlefield {
     padding-top: 0px;
+    height: 100vh;
   }
   .card-container {
     max-width: 450px;
-    font-size: 0.7em;
+    font-size: 0.6em;
   }
   .card-spieler, .card-computer{
     width: 60%;
   }
 
   .card-description {
-    font-size: 0.85em;
+    font-size: 0.6em;
   }
 
   .card-properties-list li {
@@ -307,6 +308,7 @@ body:not(.computer-turn) .player-card .property-value:focus {
   }
 
   .card-header {
+    top: 5px;
     font-size: 0.8em;
   }
 ƒ
@@ -318,12 +320,20 @@ body:not(.computer-turn) .player-card .property-value:focus {
     padding: 15px;
     border: 0.6em solid $secondary-color;
   }
+  .description-button {
+    margin: 0 -20px;
+    padding: 5px 0px;
+    font-size: 1em;
+  }
 }
 
-// Small (Tablet Portrait): 576px - 767px
-@media (max-width: 767px) {
+// Small (Tablet Portrait): 700px - 800px
+@media (max-width: 800px) {
   .card-container {
-    max-width: 400px;
+    font-size: 0.5em;
+  }
+  .card-spieler, .card-computer{
+    width: 50%;
   }
 
   .card-description {
@@ -355,10 +365,14 @@ body:not(.computer-turn) .player-card .property-value:focus {
   }
 }
 
-// Extra Small (Mobile Landscape): < 576px
-@media (max-width: 575px) {
+// Extra Small (Mobile Landscape): < 700px
+@media (max-width: 700px) {
   .card-container {
     max-width: 350px;
+    font-size: 0.4em;
+  }
+  .card-spieler, .card-computer{
+    width: 40%;
   }
 
   .card-description {

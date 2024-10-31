@@ -10,6 +10,8 @@ import BackgroundMusic from './components/BackgroundMusic';
 import EndAnimation from './components/EndAnimation';
 import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
+import LastRoundDetails from './components/LastRoundDetails';
+
 
 
 import './styles/main.scss';
@@ -104,31 +106,31 @@ function App() {
         computerValue={lastRoundDetails.computerValue}
       />
 
-      {isComputerTurn && (
-        <button onClick={handleComputerTurn} className="button-highlight" style={{ marginTop: '20px' }}>
-          {t('computerTurnButton', { computer: t('computer') })}
-        </button>
-      )}
+       {/* Computer Turn Button mit conditional rendering */}
+    {isComputerTurn && (
+      <button 
+        onClick={handleComputerTurn} 
+        className="button-highlight"
+        aria-label={t('computerTurnButton', { computer: t('computer') })}
+      >
+        {t('computerTurnButton', { computer: t('computer') })}
+      </button>
+    )}
 
-      {lastRoundDetails.selectedProperty && (
-        <div className="last-round-details">
-          <h3>{t('lastRound')}</h3>
-          <p>
-            {lastRoundDetails.selectedProperty && t(`eigenschaften.${lastRoundDetails.selectedProperty}`)}
-            <br />
-            {t('player')}: {lastRoundDetails.playerValue}
-            <br />
-            {t('computer')}: {lastRoundDetails.computerValue}
-          </p>
-        </div>
-      )}
+    {lastRoundDetails.selectedProperty && (
+      <LastRoundDetails
+        selectedProperty={lastRoundDetails.selectedProperty}
+        playerValue={lastRoundDetails.playerValue}
+        computerValue={lastRoundDetails.computerValue}
+      />
+    )}
 
-      {drawPile.length > 0 && (
-        <div className="draw-pile">
-          <h3>{t('drawPile', { count: drawPile.length })}</h3>
-        </div>
-      )}
-    </div>
+    {drawPile.length > 0 && (
+      <div className="draw-pile">
+        <h3>{t('drawPile', { count: drawPile.length })}</h3>
+      </div>
+    )}
+  </div>
   );
 }
 
